@@ -51,7 +51,7 @@ Or clone and use directly:
 ```bash
 git clone https://github.com/peirce-lang/snf-peirce
 cd snf-peirce
-pip install pandas duckdb requests
+pip install -e .
 ```
 
 ---
