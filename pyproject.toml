@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "snf-peirce"
-version = "0.1.4"
+version = "0.1.5"
 description = "Python implementation of the SNF stack — Peirce parser, lens authoring, substrate compilation, and query execution"
 readme = "README.md"
 license = "MIT"

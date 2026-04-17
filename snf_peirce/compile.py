@@ -517,6 +517,25 @@ def _write_duckdb(conn, lens_id, db_path):
     persist_conn.close()
 
 
+def _write_lens(lens, lens_path):
+    """
+    Write the lens dict as JSON alongside the compiled output.
+
+    The lens is the semantic schema — it must travel with the substrate
+    so the server and other tools can read it without requiring the
+    original source data or compilation context.
+
+    Called automatically by compile_data() for all into= output formats.
+    Safe to call even if lens is None — writes nothing in that case.
+    """
+    if not lens:
+        return
+    path = Path(lens_path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(lens, f, indent=2, ensure_ascii=False)
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # compile_data()
 # ─────────────────────────────────────────────────────────────────────────────
@@ -530,9 +549,14 @@ def compile_data(source, lens, into=None):
         lens:   dict (from lens.load() or draft.to_lens())
                 or str/Path to a lens JSON file
         into:   None           → ephemeral in-memory DuckDB (default)
-                "duckdb://path" → persist to DuckDB file
-                "csv://dir"     → write spoke CSVs to directory
-                "sql://path"    → write SQL INSERT statements to file
+                "duckdb://path" → persist to DuckDB file + lens.json alongside
+                "csv://dir"     → write spoke CSVs to directory + lens.json
+                "sql://path"    → write SQL INSERT statements + lens.json alongside
+
+    The lens is always saved alongside the output when into= is specified.
+    This ensures the semantic schema travels with the substrate and can be
+    loaded by the server, guided scripts, or any other tool without requiring
+    the original source data or compilation context.
 
     Returns:
         Substrate — compiled, queryable, reusable
@@ -622,14 +646,18 @@ def compile_data(source, lens, into=None):
         if into.startswith("csv://"):
             out_dir = into[6:]
             _write_csv(conn, lens_id, out_dir)
+            _write_lens(lens, Path(out_dir) / "lens.json")
 
         elif into.startswith("duckdb://"):
             db_path = into[9:]
             _write_duckdb(conn, lens_id, db_path)
+            # Write lens.json next to the .duckdb file
+            _write_lens(lens, Path(db_path).parent / "lens.json")
 
         elif into.startswith("sql://"):
             sql_path = into[6:]
             _write_sql(conn, lens_id, sql_path)
+            _write_lens(lens, Path(sql_path).parent / "lens.json")
 
         else:
             raise CompileError(

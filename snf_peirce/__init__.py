@@ -26,7 +26,7 @@ except ImportError:
     from compile import compile_data, Substrate, CompileError, NucleusError
     from peirce  import query, execute, discover, ResultSet, DiscoveryResult, PeirceParseError, PeirceDiscoveryError
 
-__version__ = "0.1.3"
+__version__ = "0.1.5"
 
 __all__ = [
     "parse", "parse_to_constraints", "parseToConstraints",
