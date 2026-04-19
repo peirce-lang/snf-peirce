@@ -398,3 +398,121 @@ class TestAlias:
         from parser import parseToConstraints
         q = 'WHO.role = "attorney" AND WHEN.year = 2024'
         assert parseToConstraints(q) == parse_to_constraints(q)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 13. ONLY operator — happy path
+# ─────────────────────────────────────────────────────────────────────────────
+
+class TestOnly:
+
+    def test_basic_only(self):
+        r = ok(parse_to_constraints('WHAT.color ONLY "Red"'))
+        assert r["conjuncts"] == [[constraint("WHAT", "color", "only", "Red")]]
+
+    def test_only_string_value(self):
+        r = ok(parse_to_constraints('WHO.partner_id ONLY "KPM"'))
+        c = r["conjuncts"][0][0]
+        assert c["op"]    == "only"
+        assert c["value"] == "KPM"
+
+    def test_only_numeric_value(self):
+        r = ok(parse_to_constraints("WHAT.cmc ONLY 3"))
+        c = r["conjuncts"][0][0]
+        assert c["op"]    == "only"
+        assert c["value"] == 3.0
+
+    def test_only_boolean_value(self):
+        r = ok(parse_to_constraints("WHAT.is_legal ONLY true"))
+        c = r["conjuncts"][0][0]
+        assert c["op"]    == "only"
+        assert c["value"] is True
+
+    def test_only_in_conjunction_first(self):
+        r = ok(parse_to_constraints('WHAT.color ONLY "Red" AND WHEN.year = "2023"'))
+        assert len(r["conjuncts"][0]) == 2
+        assert r["conjuncts"][0][0]["op"] == "only"
+        assert r["conjuncts"][0][1]["op"] == "eq"
+
+    def test_only_in_conjunction_second(self):
+        # ONLY appearing after another constraint — ordering must be preserved
+        r = ok(parse_to_constraints('WHEN.year = "2023" AND WHAT.color ONLY "Red"'))
+        assert r["conjuncts"][0][0]["op"] == "eq"
+        assert r["conjuncts"][0][1]["op"] == "only"
+
+    def test_only_in_or_both_conjuncts(self):
+        r = ok(parse_to_constraints('WHAT.color ONLY "Red" OR WHAT.color ONLY "White"'))
+        assert len(r["conjuncts"])         == 2
+        assert r["conjuncts"][0][0]["op"]  == "only"
+        assert r["conjuncts"][0][0]["value"] == "Red"
+        assert r["conjuncts"][1][0]["op"]  == "only"
+        assert r["conjuncts"][1][0]["value"] == "White"
+
+    def test_only_not_negated_by_default(self):
+        r = ok(parse_to_constraints('WHAT.color ONLY "Red"'))
+        assert "negated" not in r["conjuncts"][0][0]
+
+    def test_only_case_insensitive(self):
+        # Lexer uppercases keywords — 'only' must tokenize identically to 'ONLY'
+        r = ok(parse_to_constraints('WHAT.color only "Red"'))
+        assert r["conjuncts"][0][0]["op"] == "only"
+
+    def test_only_output_shape(self):
+        r = ok(parse_to_constraints('WHAT.color ONLY "Red"'))
+        c = r["conjuncts"][0][0]
+        assert "category" in c
+        assert "field"    in c
+        assert "op"       in c
+        assert "value"    in c
+        assert c["category"] == "WHAT"
+        assert c["field"]    == "color"
+
+    def test_only_all_six_dimensions(self):
+        for dim in ("WHO", "WHAT", "WHEN", "WHERE", "WHY", "HOW"):
+            r = ok(parse_to_constraints(f'{dim}.field ONLY "val"'))
+            assert r["conjuncts"][0][0]["category"] == dim
+            assert r["conjuncts"][0][0]["op"]       == "only"
+
+    def test_only_single_quote_value(self):
+        r = ok(parse_to_constraints("WHAT.color ONLY 'Red'"))
+        assert r["conjuncts"][0][0]["value"] == "Red"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 14. NOT ONLY — passthrough behavior
+#
+# NOT ONLY is semantically unusual (complement of an exclusivity assertion)
+# and Portolan does not currently expand it. The parser's job is to represent
+# the intent faithfully — op: "only", negated: True — and pass it through.
+# Portolan raises "NOT ONLY is not yet supported" at plan time.
+# ─────────────────────────────────────────────────────────────────────────────
+
+class TestNotOnly:
+
+    def test_not_only_parses_without_error(self):
+        r = ok(parse_to_constraints('NOT WHAT.color ONLY "Red"'))
+        c = r["conjuncts"][0][0]
+        assert c["op"]      == "only"
+        assert c["negated"] is True
+
+    def test_not_only_output_shape(self):
+        r = ok(parse_to_constraints('NOT WHAT.color ONLY "Red"'))
+        c = r["conjuncts"][0][0]
+        assert c["category"] == "WHAT"
+        assert c["field"]    == "color"
+        assert c["value"]    == "Red"
+        assert c["op"]       == "only"
+        assert c["negated"]  is True
+
+    def test_not_only_missing_value_is_error(self):
+        r = fail(parse("WHAT.color ONLY"))
+        assert r["success"] is False
+
+    def test_only_without_dimension_field_is_error(self):
+        r = fail(parse('ONLY "Red"'))
+        assert r["success"] is False
+
+    def test_only_with_operator_after_is_error(self):
+        # ONLY = "Red" is not valid — ONLY takes a value directly, not an operator
+        r = fail(parse('WHAT.color ONLY = "Red"'))
+        assert r["success"] is False

@@ -69,7 +69,7 @@ class T:
 # ─────────────────────────────────────────────────────────────────────────────
 
 DIMENSIONS = {"WHO", "WHAT", "WHEN", "WHERE", "WHY", "HOW"}
-KEYWORDS   = {"AND", "OR", "NOT", "BETWEEN", "CONTAINS", "PREFIX", "TRUE", "FALSE"}
+KEYWORDS   = {"AND", "OR", "NOT", "BETWEEN", "CONTAINS", "PREFIX", "TRUE", "FALSE", "ONLY"}
 
 # Two-char operators must come before single-char to match correctly
 SYMBOLIC_OPERATORS = [">=", "<=", "!=", "=", ">", "<"]
@@ -386,6 +386,14 @@ class _Parser:
             got = field_tok["value"] if field_tok["value"] is not None else "EOF"
             return {"success": False, "error": f"Expected field name after '{dimension}.' but got '{got}'", "position": field_tok["position"], "token": field_tok["value"]}
         field = self._consume()["value"]
+
+        # ONLY
+        if self._peek()["type"] == T.KEYWORD and self._peek()["value"] == "ONLY":
+            self._consume()
+            val = self._parse_value()
+            if not val["success"]:
+                return val
+            return {"success": True, "constraint": {"dimension": dimension, "field": field, "operator": "only", "value": val["value"], "negated": False}}
 
         # BETWEEN
         if self._peek()["type"] == T.KEYWORD and self._peek()["value"] == "BETWEEN":
