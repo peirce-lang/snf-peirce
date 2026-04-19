@@ -219,6 +219,7 @@ WHEN.released > "1960"                             comparison
 WHEN.released BETWEEN "1955" AND "1965"            range (inclusive)
 WHAT.title CONTAINS "Blue"                         substring
 WHO.artist PREFIX "Miles"                          starts with
+WHAT.color ONLY "Red"                              exclusivity (no other value exists)
 NOT WHERE.office = "Seattle"                       negation
 WHO.artist = "Miles Davis" AND WHEN.released = "1959"    AND (intersection)
 WHO.artist = "Miles Davis" OR WHO.artist = "Coltrane"    OR (union)
