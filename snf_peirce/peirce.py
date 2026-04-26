@@ -310,14 +310,85 @@ class ResultSet:
 # Internal execution
 # ─────────────────────────────────────────────────────────────────────────────
 
+def _expand_only(constraint, substrate):
+    """
+    Expand an ONLY constraint into a set of entity_ids via set difference.
+
+    ONLY semantics: entities where field = value AND field has no other values.
+
+    Example: WHAT.color ONLY 'Red'
+        → entities with color = Red
+        MINUS entities with color = anything other than Red
+
+    Strategy:
+        1. Fetch entities matching eq(value)  — the candidates
+        2. Fetch all values for this field via _run_discovery (field scope)
+        3. For each other value, fetch entities matching eq(other_value)
+        4. Return candidates minus the union of all other-value sets
+
+    This is two discovery/query passes plus one set difference per other value.
+    It does not generate a NOT IN chain — the substrate never sees ONLY.
+
+    Raises ValueError if op is not 'only'. Caller is responsible for routing.
+    """
+    op = constraint.get("op")
+    if op != "only":
+        raise ValueError(f"_expand_only called with op={op!r}, expected 'only'")
+
+    dim   = (constraint.get("category") or constraint.get("dimension") or "").upper()
+    field = (constraint.get("field") or "").lower()
+    value = str(constraint.get("value", ""))
+
+    # Step 1: entities that have this value
+    eq_constraint = {"category": dim, "field": field, "op": "eq", "value": value}
+    candidates = set(substrate.query([eq_constraint]))
+
+    if not candidates:
+        return set()
+
+    # Step 2: all values for this field
+    discovery = _run_discovery(substrate, "field", dim, field, limit=None)
+    all_values = [row["value"] for row in discovery.rows]
+
+    # Step 3: for each other value, find entities that have it and subtract
+    contaminated = set()
+    for other_value in all_values:
+        if str(other_value) == value:
+            continue
+        other_constraint = {"category": dim, "field": field, "op": "eq", "value": other_value}
+        contaminated |= set(substrate.query([other_constraint]))
+
+    # Step 4: candidates that have no other values for this field
+    return candidates - contaminated
+
+
 def _execute_conjunct(conjunct, substrate):
     """
     Execute a single conjunct (flat list of Portolan constraints)
     against the substrate. Returns a set of entity_ids.
+
+    ONLY constraints are expanded before the conjunct reaches substrate.query().
+    The substrate never sees op='only'.
     """
     if not conjunct:
         return set()
-    return set(substrate.query(conjunct))
+
+    # Partition: separate ONLY constraints from everything else
+    only_constraints  = [c for c in conjunct if c.get("op") == "only"]
+    plain_constraints = [c for c in conjunct if c.get("op") != "only"]
+
+    # Execute plain constraints normally
+    result = set(substrate.query(plain_constraints)) if plain_constraints else None
+
+    # Expand each ONLY constraint and intersect into result
+    for c in only_constraints:
+        only_ids = _expand_only(c, substrate)
+        if result is None:
+            result = only_ids
+        else:
+            result = result & only_ids
+
+    return result if result is not None else set()
 
 
 def _execute_dnf(conjuncts, substrate):
@@ -327,11 +398,43 @@ def _execute_dnf(conjuncts, substrate):
     Each conjunct is executed independently.
     Results are unioned across conjuncts.
 
+    ONLY constraints are treated as global filters — they apply across
+    all conjuncts, not just the one they appear in. This is correct
+    semantics: ONLY "RCA" means the entity has only RCA as a label,
+    regardless of which title OR branch matched it.
+
     Returns a sorted list of entity_ids.
     """
-    result = set()
+    # Collect ONLY constraints from all conjuncts — they are global filters.
+    # Also strip them from conjuncts so _execute_conjunct doesn't double-apply.
+    global_only = []
+    stripped_conjuncts = []
     for conjunct in conjuncts:
-        result |= _execute_conjunct(conjunct, substrate)
+        only = [c for c in conjunct if c.get("op") == "only"]
+        rest = [c for c in conjunct if c.get("op") != "only"]
+        global_only.extend(only)
+        stripped_conjuncts.append(rest)
+
+    # Deduplicate ONLY constraints (same dim+field+value from multiple conjuncts)
+    seen_only = set()
+    deduped_only = []
+    for c in global_only:
+        key = (c.get("category") or c.get("dimension"), c.get("field"), c.get("value"))
+        if key not in seen_only:
+            seen_only.add(key)
+            deduped_only.append(c)
+
+    # Union across conjuncts (ONLY already stripped)
+    result = set()
+    for conjunct in stripped_conjuncts:
+        if conjunct:  # skip empty conjuncts
+            result |= set(substrate.query(conjunct))
+
+    # Apply global ONLY filters as intersection
+    for c in deduped_only:
+        only_ids = _expand_only(c, substrate)
+        result = result & only_ids
+
     return sorted(result)
 
 
