@@ -1,0 +1,59 @@
+{
+  "lens_id": "discogs_v1",
+  "translator_version": "1.0.0",
+  "schema": "discogs",
+  "entity_count": 833,
+  "fact_count": 7444,
+  "facts_by_dim": {
+    "who": 1845,
+    "what": 3957,
+    "when": 1638,
+    "where": 0,
+    "why": 0,
+    "how": 4
+  },
+  "hub_rows": 833,
+  "sample_coordinates": {
+    "who": [
+      "WHO|artist|Dory Previn And Andr\u00e9 Previn Conducted By John Williams",
+      "WHO|label|20th Century Fox Records",
+      "WHO|artist|Jerry Goldsmith"
+    ],
+    "what": [
+      "WHAT|title|Valley Of The Dolls (Music From The Motion Picture Soundtrack)",
+      "WHAT|catalog_no|S4196",
+      "WHAT|format|LP"
+    ],
+    "when": [
+      "WHEN|released|1967",
+      "WHEN|year_added|2025",
+      "WHEN|released|1970"
+    ],
+    "how": [
+      "HOW|media_condition|Very Good (VG)",
+      "HOW|sleeve_condition|Very Good Plus (VG+)",
+      "HOW|media_condition|Mint (M)"
+    ]
+  },
+  "provenance_check": {
+    "lens_id_present": true,
+    "translator_version_present": true,
+    "entity_ids_sample": [
+      "discogs:1004125",
+      "discogs:1017812",
+      "discogs:1024395",
+      "discogs:1027284",
+      "discogs:1027897"
+    ]
+  },
+  "files": [
+    "00_ddl.sql",
+    "snf_who.csv",
+    "snf_what.csv",
+    "snf_when.csv",
+    "snf_how.csv",
+    "snf_hub.csv",
+    "load.sh",
+    "verification_report.json"
+  ]
+}

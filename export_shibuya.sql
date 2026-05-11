@@ -1,0 +1,1 @@
+\COPY (SELECT eventid, artist, title, host, release_year, date, day_of_week, "self-titled" FROM shibuya_staging WHERE isactive = '1') TO 'C:\Users\Alexander\Desktop\shibuya.csv' CSV HEADER

@@ -1,0 +1,5 @@
+entity_id,dimension,semantic_key,value,coordinate,lens_id,translator_version
+discogs:4793940,how,media_condition,Very Good (VG),HOW|media_condition|Very Good (VG),discogs_v1,1.0.0
+discogs:4793940,how,sleeve_condition,Very Good Plus (VG+),HOW|sleeve_condition|Very Good Plus (VG+),discogs_v1,1.0.0
+discogs:19117408,how,media_condition,Mint (M),HOW|media_condition|Mint (M),discogs_v1,1.0.0
+discogs:19117408,how,sleeve_condition,Mint (M),HOW|sleeve_condition|Mint (M),discogs_v1,1.0.0

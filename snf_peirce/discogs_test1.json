@@ -1,0 +1,72 @@
+{
+  "lens_id": "discogs_test1",
+  "lens_version": "1.0",
+  "generated_at": "2026-04-28T20:56:20.183672Z",
+  "declaration": {
+    "why|intent": "field_mapping_discogs_test1",
+    "why|authority": "ABK",
+    "why|scope": "",
+    "why|permitted_ops": "field_mapping canonical_tagging",
+    "source_format": "csv_export",
+    "domain": "music collection",
+    "created": "2026-04-28",
+    "created_by": ""
+  },
+  "coordinate_map": {
+    "Catalog#": {
+      "dimension": "what",
+      "semantic_key": "catalog#"
+    },
+    "Artist": {
+      "dimension": "who",
+      "semantic_key": "artist"
+    },
+    "Title": {
+      "dimension": "what",
+      "semantic_key": "title"
+    },
+    "Label": {
+      "dimension": "what",
+      "semantic_key": "publisher"
+    },
+    "Format": {
+      "dimension": "what",
+      "semantic_key": "format"
+    },
+    "Released": {
+      "dimension": "when",
+      "semantic_key": "released"
+    },
+    "release_id": {
+      "dimension": "what",
+      "semantic_key": "release_id"
+    },
+    "CollectionFolder": {
+      "dimension": "what",
+      "semantic_key": "collectionfolder"
+    },
+    "Date Added": {
+      "dimension": "when",
+      "semantic_key": "date_added"
+    }
+  },
+  "stats": {
+    "total_fields": 9,
+    "by_dimension": {
+      "who": 1,
+      "what": 6,
+      "when": 2,
+      "where": 0,
+      "how": 0
+    }
+  },
+  "nucleus": {
+    "type": "composite",
+    "fields": [
+      "Catalog#",
+      "release_id"
+    ],
+    "separator": "-",
+    "prefix": "DiscogsNo"
+  }
+}

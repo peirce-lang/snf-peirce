@@ -374,7 +374,7 @@ class SRFRecord:
             coordinate = f"{fact.dimension}|{fact.semantic_key}|{fact.value}"
             spoke_rows.append({
                 "entity_id":    entity_id,
-                "dimension":    fact.dimension,
+                "dimension":    fact.dimension.lower(),
                 "semantic_key": fact.semantic_key,
                 "value":        fact.value,
                 "coordinate":   coordinate,

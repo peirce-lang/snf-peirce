@@ -1,0 +1,19 @@
+{
+  "lens_id": "discogs_v1",
+  "version": "1.0.0",
+  "authority": "snf",
+  "description": "Discogs collection CSV export — SNF coordinate mapping",
+  "nucleus": {
+    "type": "single",
+    "field": "release_id",
+    "prefix": "discogs"
+  },
+  "notes": {
+    "Artist":    "Parsed — strips Discogs disambiguation numbers like (4)",
+    "Label":     "Parsed — deduplicated, comma-separated values",
+    "Format":    "Parsed — split into format type, pressing type, color, weight",
+    "Catalog#":  "Raw — first value used if comma-separated",
+    "Released":  "Year extracted from full date if needed",
+    "Date Added":"Year extracted only"
+  }
+}

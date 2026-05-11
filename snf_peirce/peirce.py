@@ -320,15 +320,6 @@ def _expand_only(constraint, substrate):
         → entities with color = Red
         MINUS entities with color = anything other than Red
 
-    Strategy:
-        1. Fetch entities matching eq(value)  — the candidates
-        2. Fetch all values for this field via _run_discovery (field scope)
-        3. For each other value, fetch entities matching eq(other_value)
-        4. Return candidates minus the union of all other-value sets
-
-    This is two discovery/query passes plus one set difference per other value.
-    It does not generate a NOT IN chain — the substrate never sees ONLY.
-
     Raises ValueError if op is not 'only'. Caller is responsible for routing.
     """
     op = constraint.get("op")
@@ -339,9 +330,28 @@ def _expand_only(constraint, substrate):
     field = (constraint.get("field") or "").lower()
     value = str(constraint.get("value", ""))
 
-    # Step 1: entities that have this value
-    eq_constraint = {"category": dim, "field": field, "op": "eq", "value": value}
-    candidates = set(substrate.query([eq_constraint]))
+    return _expand_only_set(dim, field, {value}, substrate)
+
+
+def _expand_only_set(dim, field, allowed_values, substrate):
+    """
+    Core ONLY implementation supporting a set of allowed values.
+
+    Semantics: entities where every value of dim.field is within allowed_values.
+    i.e. entities that have at least one allowed value AND no disallowed values.
+
+    Used by both single-value ONLY and grouped multi-value ONLY.
+
+    Strategy:
+        1. Fetch candidates — entities matching any of the allowed values (union)
+        2. Fetch all values for this field via discovery
+        3. For each disallowed value, subtract entities that have it
+    """
+    # Step 1: candidates — entities with at least one allowed value
+    candidates = set()
+    for value in allowed_values:
+        eq_constraint = {"category": dim, "field": field, "op": "eq", "value": value}
+        candidates |= set(substrate.query([eq_constraint]))
 
     if not candidates:
         return set()
@@ -350,15 +360,15 @@ def _expand_only(constraint, substrate):
     discovery = _run_discovery(substrate, "field", dim, field, limit=None)
     all_values = [row["value"] for row in discovery.rows]
 
-    # Step 3: for each other value, find entities that have it and subtract
+    # Step 3: subtract entities that have any disallowed value
     contaminated = set()
     for other_value in all_values:
-        if str(other_value) == value:
+        if str(other_value) in {str(v) for v in allowed_values}:
             continue
         other_constraint = {"category": dim, "field": field, "op": "eq", "value": other_value}
         contaminated |= set(substrate.query([other_constraint]))
 
-    # Step 4: candidates that have no other values for this field
+    # Step 4: candidates with no disallowed values
     return candidates - contaminated
 
 
@@ -380,9 +390,19 @@ def _execute_conjunct(conjunct, substrate):
     # Execute plain constraints normally
     result = set(substrate.query(plain_constraints)) if plain_constraints else None
 
-    # Expand each ONLY constraint and intersect into result
+    # Group ONLY constraints by (dim, field) so that multiple ONLY clauses
+    # on the same field are treated as a bounded set rather than independent
+    # intersections. e.g. artist ONLY "Otis" AND artist ONLY "Carla" means
+    # "artist is within {Otis, Carla}" not "artist is only Otis AND only Carla".
+    from collections import defaultdict
+    only_groups = defaultdict(list)
     for c in only_constraints:
-        only_ids = _expand_only(c, substrate)
+        dim   = (c.get("category") or c.get("dimension") or "").upper()
+        field = (c.get("field") or "").lower()
+        only_groups[(dim, field)].append(str(c.get("value", "")))
+
+    for (dim, field), values in only_groups.items():
+        only_ids = _expand_only_set(dim, field, set(values), substrate)
         if result is None:
             result = only_ids
         else:
@@ -430,9 +450,19 @@ def _execute_dnf(conjuncts, substrate):
         if conjunct:  # skip empty conjuncts
             result |= set(substrate.query(conjunct))
 
-    # Apply global ONLY filters as intersection
+    # Apply global ONLY filters as intersection.
+    # Group by (dim, field) so multiple ONLY clauses on the same field are
+    # treated as a bounded set: artist ONLY "Otis" AND artist ONLY "Carla"
+    # means artist within {Otis, Carla}, not an impossible scalar intersection.
+    from collections import defaultdict
+    only_groups = defaultdict(list)
     for c in deduped_only:
-        only_ids = _expand_only(c, substrate)
+        dim   = (c.get("category") or c.get("dimension") or "").upper()
+        field = (c.get("field") or "").lower()
+        only_groups[(dim, field)].append(str(c.get("value", "")))
+
+    for (dim, field), values in only_groups.items():
+        only_ids = _expand_only_set(dim, field, set(values), substrate)
         result = result & only_ids
 
     return sorted(result)

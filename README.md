@@ -1,6 +1,8 @@
 # snf-peirce
 
-Python implementation of the SNF (Semantic Normalized Form) stack.
+# snf-peirce
+
+Query data by WHO/WHAT/WHEN/WHERE/WHY/HOW instead of writing SQL joins.
 
 Map your data to meaning once. Query it in plain language forever. No SQL. No physical schema knowledge. No joins.
 

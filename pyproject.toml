@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "snf-peirce"
-version = "0.1.9"
+version = "0.2.0"
 description = "SNF/Peirce semantic query engine for retrieving data by WHO/WHAT/WHEN/WHERE/WHY/HOW instead of SQL joins"
 authors = [
     {name = "Alexander Kern"}
@@ -39,3 +39,6 @@ include = ["snf_peirce*"]
 
 [tool.setuptools.package-data]
 snf_peirce = ["*.md"]
+
+[tool.pytest.ini_options]
+pythonpath = [".", "snf_peirce"]

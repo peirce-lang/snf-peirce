@@ -1,0 +1,936 @@
+index,character,voice-actor,movie
+0,Abby Mallard,Joan Cusack,Chicken Little
+1,Abigail Gabble,Monica Evans,The Aristocats
+2,Abis Mal,Jason Alexander,The Return of Jafar
+3,Abu,Frank Welker,Aladdin
+4,Achilles,None,The Hunchback of Notre Dame
+5,Adella,Sherry Lynn,The Little Mermaid
+6,Adorabeezle Winterpop,None,Wreck-It Ralph
+7,The Agent,Greg Germann,Bolt
+8,Agent Wendy Pleakley,Kevin McDonald,Lilo & Stitch
+9,Ajax the Gorilla,None,Donald Duck and the Gorilla
+10,Akela,John Abbott,The Jungle Book
+11,Al the Alligator,Thurl Ravenscroft,Lady and the Tramp
+12,Aladar,D. B. Sweeney,Dinosaur
+13,Aladdin,Scott Weinger; Brad Kane,Aladdin
+14,Alameda Slim,Randy Quaid,Home on the Range
+15,Alan-a-Dale,Roger Miller,Robin Hood
+16,Alana,Kimmy Robertson,The Little Mermaid
+17,Alcmene,Barbara Barrie,Hercules
+18,Alice,Kathryn Beaumont,Alice in Wonderland
+19,Alice Bluebonnet,None,Make Mine Music
+20,Alice's Sister,Heather Angel,Alice in Wonderland
+21,Amelia Gabble,Carole Shelley,The Aristocats
+22,Amos Slade,Jack Albertson,The Fox and the Hound
+23,Amphitryon,Hal Holbrook,Hercules
+24,Anastasia Tremaine,Lucille Bliss,Cinderella
+25,Anda,Andrea Martin,Brother Bear 2
+26,Andrina,Tara Strong,The Little Mermaid
+27,Angel,Alyssa Milano,Lady and the Tramp II: Scamp's Adventure
+28,Angelique,Bernadette Peters,Beauty and the Beast: The Enchanted Christmas
+29,Angus MacBadger,Campbell Grant,The Adventures of Ichabod and Mr. Toad
+30,Anita Radcliffe,Lisa Davis,101 Dalmatians
+31,Anna,Kristen Bell,Frozen
+32,Annette,Debi Derryberry,Lady and the Tramp II: Scamp's Adventure
+33,April,None,House of Mouse
+34,Apollo,Keith David,Hercules
+35,Aquata,Grey DeLisle; Mona Marshall,The Little Mermaid
+36,Aracuan Bird,Pinto Colvig,The Three Caballeros
+37,The Archdeacon,David Ogden Stiers,The Hunchback of Notre Dame
+38,Archimedes Q. Porter,Nigel Hawthorne,Tarzan
+39,Archimedes,Junius Matthews,The Sword in the Stone
+40,Ariel,Jodi Benson,The Little Mermaid
+41,Arista,Kimmy Robertson,The Little Mermaid
+42,Armoire,Jo Anne Worley,Beauty and the Beast
+43,Arthur/Wart,Rickie Sorensen,The Sword in the Stone
+44,Arthur/Wart,Richard Reitherman,The Sword in the Stone
+45,Arthur/Wart,Robert Reitherman,The Sword in the Stone
+46,Arthur,David Lander,Jungle Cubs
+47,Assistant Mayor Dawn Bellwether,Jenny Slate,Zootopia
+48,Atka,Jeff Bennett,Brother Bear 2
+49,Atropos,Paddi Edwards,Hercules
+50,Attina,Kari Wahlgren,The Little Mermaid
+51,Audrey the Chicken,Estelle Harris,Home on the Range
+52,Audrey Ramirez,Jacqueline Obradors,Atlantis: The Lost Empire
+53,Aunt Sarah,Verna Felton,Lady and the Tramp
+54,Aunt Siqiniq,Wendie Malick,Brother Bear 2
+55,Aunt Taqqiq,Kathy Najimy,Brother Bear 2
+56,Aurora,Mary Costa,Sleeping Beauty
+57,Axe,Jeff Bennett,Beauty and the Beast: The Enchanted Christmas
+58,B.E.N.,Martin Short,Treasure Planet
+59,Babette,Mary Kay Bergman,Beauty and the Beast
+60,Babyface Beagle,Terry McGovern,DuckTales
+61,Baby Red Bird,Tress MacNeille,Mickey Mouse Clubhouse
+62,Baby Herman,April Winchell,Who Framed Roger Rabbit
+63,Baby Herman,Lou Hirsch,Who Framed Roger Rabbit
+64,Backwoods Beagle,Danny Mann,DuckTales
+65,Bacon Beagle,None,DuckTales
+66,Baggy Beagle,Frank Welker,DuckTales
+67,Bagheera,Sebastian Cabot,The Jungle Book
+68,Baileywick,Tim Gunn,Sofia the First
+69,Baker,Alex Murphey,Beauty and the Beast
+70,Baker,Rob Paulsen,Cinderella II: Dreams Come True
+71,Ballerina,None,Fantasia 2000
+72,Baloo Bear,Phil Harris,The Jungle Book
+73,Bambi,Donnie Dunagan,Bambi
+74,Bambi,Hardie Albright,Bambi
+75,Bambi,Alexander Gould,Bambi
+76,Bambi's Mother,Paula Winslowe; Carolyn Hennesy,Bambi
+77,Banzai,Cheech Marin,The Lion King
+78,Bankjob Beagle,Peter Cullen,DuckTales
+79,Bartholomew,Barrie Ingham,The Great Mouse Detective
+80,Bashful,Scotty Mattraw,Snow White and the Seven Dwarfs
+81,Basil of Baker Street,Barrie Ingham,The Great Mouse Detective
+82,Baylene,Joan Plowright,Dinosaur
+83,Bear,Dal McKennon,Bedknobs and Broomsticks
+84,Beary Barrington,Haley Joel Osment,The Country Bears
+85,Beast,Robby Benson,Beauty and the Beast
+86,Beaver,Stan Freberg,Lady and the Tramp
+87,Bella,Frank Welker,Mickey Mouse Clubhouse
+88,Belle,Paige O'Hara,Beauty and the Beast
+89,Ben,Billy Connolly,Pocahontas
+90,Ben Ali Gator,Jim Cummings,Fantasia
+91,Benjamin Clawhauser,Nate Torrence,Zootopia
+92,Benny the Cab,Charles Fleischer,Who Framed Roger Rabbit
+93,Bent-Tail the Coyote,Unknown,The Legend of Coyote Rock
+94,Bent-Tail Junior,Unknown,Sheep Dog
+95,Bentina Beakley,Joan Gerber,DuckTales
+96,Beret Girl,Vicki Lewis,An Extremely Goofy Movie
+97,Berlioz,Dean Clark,The Aristocats
+98,Bernard,Bob Newheart,The Rescuers
+99,Big Al,James Gammon,The Country Bears
+100,Big Bad Wolf,Billy Bletcher,Three Little Pigs
+101,Big Mama,Pearl Bailey,The Fox and the Hound
+102,Bigtime Beagle,Frank Welker,DuckTales
+103,Bill the Lizard,Larry Grey,Alice in Wonderland
+104,Billy Boss,Thurl Ravenscroft,The Aristocats
+105,Billy Bones,Patrick McGoohan,Treasure Planet
+106,Bimbette,Kath Soucie,Beauty and the Beast
+107,Binkie Muddlefoot,Susan Tolsky,Darkwing Duck
+108,Binky Beagle,None,DuckTales
+109,Black Bart,Thurl Ravenscroft,The Sword in the Stone
+110,Blake,Nick Swardson,Bolt
+111,Blaze,None,Tinker Bell and the Lost Treasure
+112,Blue Fairy,Evelyn Venable,Pinocchio
+113,Bobble,Rob Paulsen,Disney Fairies
+114,Bolt,John Travolta,Bolt
+115,Bomber Beagle,Robert Ridgely,DuckTales
+116,Bonnie Hopps,Bonnie Hunt,Zootopia
+117,Bookseller,Alvin Epstein,Beauty and the Beast
+118,Boomer,Paul Winchell,The Fox and the Hound
+119,Bonkers D. Bobcat,Jim Cummings,Bonkers
+120,Boss Beaver,Brad Garrett,Timon and Pumbaa
+121,Bouncer Beagle,Chuck McCann,DuckTales
+122,Bowler Hat Guy,Stephen J. Anderson,Meet the Robinsons
+123,Br'er Bear,Nick Stewart,Song of the South
+124,Br'er Fox,James Baskett,Song of the South
+125,Br'er Rabbit,Johnny Lee,Song of the South
+126,Bradley Uppercrust III,Jeff Bennett,An Extremely Goofy Movie
+127,Bruno the Dog,Jimmy MacDonald; Frank Welker,Cinderella
+128,Bruton,Peter Siragusa,Dinosaur
+129,Brutus and Nero,Candy Candido,The Rescuers
+130,Buck,Cuba Gooding Jr.,Home on the Range
+131,Buck Cluck,Garry Marshall,Chicken Little
+132,Bucky Bug,None,Silly Symphonies
+133,Bucky Oryx-Antlerson,Byron Howard,Zootopia
+134,Bucky the Squirrel,Bob Bergen,The Emperor's New Groove
+135,Buford the Cook,Michael Colyar,The Princess and the Frog
+136,Bugle Beagle,Brian Cummings,DuckTales
+137,Burger Beagle,Chuck McCann,DuckTales
+138,Buster,Chazz Palminteri,Lady and the Tramp II: Scamp's Adventure
+139,Butch the Bulldog,Frank Welker,Bone Trouble
+140,Buzzie the Vulture,J. Pat O'Malley,The Jungle Book
+141,Cadpig,Kath Soucie,101 Dalmatians: The Series
+142,Calliope,Lillias White,Hercules
+143,Candlehead,Katie Lowes,Wreck-It Ralph
+144,The Captain,Thurl Ravenscroft,One Hundred and One Dalmatians
+145,Captain Amelia,Emma Thompson,Treasure Planet
+146,Captain Hook,Hans Conried,Peter Pan
+147,Captain John Smith,Mel Gibson,Pocahontas
+148,Captain Phoebus,Kevin Kline,The Hunchback of Notre Dame
+149,Carl the Robot,Harland Williams,Meet the Robinsons
+150,Carlotta the Maid,Edie McClurg,The Little Mermaid
+151,The Carpenter,J. Pat O'Malley,Alice in Wonderland
+152,Casey Junior,Margaret Wright,Dumbo
+153,Cash,Patrick Swayze,The Fox and the Hound 2
+154,Cassim,John Rhys-Davies,Aladdin and the King of Thieves
+155,The Caterpillar,Richard Haydn,Alice in Wonderland
+156,Catty the Elephant,Noreen Gammill,Dumbo
+157,Cecil the Vulture,Michael McKean,Jungle Cubs
+158,Cedric the Sorcerer,Jess Harnell,Sofia the First
+159,Chaca,Kellyann Kelso,The Emperor's New Groove
+160,Chandeleria,April Winchell,Belle's Magical World
+161,Chair Mouse,Bernard Fox,The Rescuers
+162,Chainsaw,Frank Welker,Goof Troop
+163,Charlotte La Bouff,Jennifer Cody,The Princess and the Frog
+164,Cheetata and Cheetato,Rob Paulsen; Jim Cummings,Timon and Pumbaa
+165,Chef Bouche,Brian Cummings,Beauty and the Beast
+166,Chef Louis,Rene Auberjonois,The Little Mermaid
+167,Chernabog,Corey Burton,Fantasia
+168,Cheshire Cat,Sterling Holloway,Alice in Wonderland
+169,Chi-Fu,James Hong,Mulan
+170,Chicha,Wendie Malick,The Emperor's New Groove
+171,Chicken Little,Zach Braff,Chicken Little
+172,Chief,Pat Buttram,The Fox and the Hound
+173,Chief Bogo,Idris Elba,Zootopia
+174,Chief Powhatan,Russell Means,Pocahontas
+175,Chien-Po,Jerry Tondo,Mulan
+176,Chip,James MacDonald,Private Pluto
+177,Chip Potts,Bradley Michael Pierce,Beauty and the Beast
+178,Christopher Robin,Bruce Reitherman,Winnie the Pooh and the Honey Tree
+179,Cinderella,Ilene Woods,Cinderella
+180,Circus Animals,None,Dumbo
+181,Clank,Jeff Bennett,Disney Fairies
+182,Clara Cluck,Florence Gill,Orphan's Benefit
+183,Clarabelle Cow,Marcellite Garner,Plane Crazy
+184,Clayton,Brian Blessed,Tarzan
+185,Cleo,None,Pinocchio
+186,Clio,Vanéese Y. Thomas,Hercules
+187,Cloak and Dagger,None,The Little Mermaid II: Return to the Sea
+188,Clopin Trouillefou,Paul Kandel,The Hunchback of Notre Dame
+189,Clotho,Amanda Plummer,Hercules
+190,Clover,Wayne Brady,Sofia the First
+191,The Coachman,Charles Judels,Pinocchio
+192,Cobra Bubbles,Ving Rhames,Lilo & Stitch
+193,Codfish,Robert Holt,Bedknobs and Broomsticks
+194,Cody,Adam Ryen,The Rescuers Down Under
+195,Cogsworth,David Ogden Stiers,Beauty and the Beast
+196,Colette,Kath Soucie,Lady and the Tramp II: Scamp's Adventure
+197,The Colonel,J. Pat O'Malley,101 Dalmatians
+198,Colonel Hathi,J. Pat O'Malley,The Jungle Book
+199,Commander Lyle Rourke,James Garner,Atlantis: The Lost Empire
+200,Cookie,Jim Varney,Atlantis: The Lost Empire
+201,Copper,Corey Feldman; Kurt Russell,The Fox and the Hound
+202,Cornelius Robinson,Tom Selleck,Meet the Robinsons
+203,Cousin Randy,Randy Newman,The Princess and the Frog
+204,Crane,Jeff Bennett,Belle's Magical World
+205,Creeper,Phil Fondacaro,The Black Cauldron
+206,Cri-Kee,None,Mulan
+207,The Crocodile (Tick Tock),None,Peter Pan
+208,Cruella de Vil,Betty Lou Gerson,101 Dalmatians
+209,Crumbelina DiCaramello,Cymbre Walk,Wreck-It Ralph
+210,Cubby,Robert Ellis,Peter Pan
+211,Cyril Proudbottom,J. Pat O'Malley,The Adventures of Ichabod and Mr. Toad
+212,Daisy Duck,Clarence Nash; Gloria Blondell,Mr. Duck Steps Out
+213,Dale,Dessie Flynn; Corey Burton,Private Pluto
+214,Dallben,Freddie Jones,The Black Cauldron
+215,Danielle,Kath Soucie,Lady and the Tramp II: Scamp's Adventure
+216,Danny,Andrew McDonough,Return to Never Land
+217,Darby,Chloë Grace Moretz,My Friends Tigger & Pooh
+218,Darling,Peggy Lee,Lady and the Tramp
+219,Dash,Stephen Furst,The Little Mermaid II: Return to the Sea
+220,David Kawena,Jason Scott Lee,Lilo & Stitch
+221,Demetrius,Wayne Knight,Hercules
+222,Denahi,Jason Raize,Brother Bear
+223,Derek Blunt,Peter Renaday,Darkwing Duck
+224,DeSoto,Carl Weintraub,Oliver & Company
+225,Dewey,Clarence Nash; Russi Taylor,Donald's Nephews
+226,Dex Barrington,Justin Berfield,The Country Bears
+227,Diablo,None,Sleeping Beauty
+228,Digger the Mole,Dub Taylor,The Rescuers
+229,Dijon the Thief,Richard Libertini,DuckTales
+230,Dinah the Cat,None,Alice in Wonderland
+231,Dinah the Dachshund,None,The Sleepwalker
+232,Dinky,Richard Bakalyan,The Fox and the Hound
+233,The Director,James Lipton,Bolt
+234,Dixie,Reba McEntire,The Fox and the Hound 2
+235,Dizzie the Vulture,Lord Tim Hudson,The Jungle Book
+236,Djali,None,The Hunchback of Notre Dame
+237,Doc,Roy Atwell,Snow White and the Seven Dwarfs
+238,Doctor Mouse,Bernard Fox,The Rescuers Down Under
+239,Dodger,Billy Joel,Oliver & Company
+240,The Dodo,Bill Thompson,Alice in Wonderland
+241,The Dog Catcher,Jeff Bennett,Lady and the Tramp II: Scamp's Adventure
+242,Doli,John Byner,The Black Cauldron
+243,Don Karnage,Jim Cummings,TaleSpin
+244,Donald Duck,Clarence Nash; Tony Anselmo,The Wise Little Hen
+245,Doofus Drake,Brian Cummings,DuckTales
+246,The Doorknob,Joseph Kearns,Alice in Wonderland
+247,The Doorman,Don Barclay,Cinderella
+248,Dopey,Eddie Collins,Snow White and the Seven Dwarfs
+249,Doris,Ethan Sandler,Meet the Robinsons
+250,The Dormouse,Jimmy MacDonald,Alice in Wonderland
+251,Doug Ramses,Rich Moore,Zootopia
+252,Dr. Calico,Malcolm McDowell,Bolt
+253,Dr. David Q. Dawson,Val Bettin,The Great Mouse Detective
+254,Dr. Doppler,David Hyde Pierce,Treasure Planet
+255,Dr. Facilier,Keith David,The Princess and the Frog
+256,Dr. Forrester,Ronn Moss,Bolt
+257,Dr. Jacques von Hamsterviel,Jeff Bennett,Stitch! The Movie
+258,Dr. Joshua Sweet,Phil Morris,Atlantis: The Lost Empire
+259,Dr. Jumba Jookiba,David Ogden Stiers,Lilo & Stitch
+260,Dr. Reginald Bushroot,Tino Insana,Darkwing Duck
+261,Drake Mallard (Darkwing Duck),Jim Cummings,Darkwing Duck
+262,Drizella Tremaine,Rhoda Williams; Russi Taylor,Cinderella
+263,Duchess,Eva Gabor,The Aristocats
+264,Duchess,Marjorie Bennett,One Hundred and One Dalmatians
+265,Duckworth,Chuck McCann,DuckTales
+266,Duke,None,Fantasia 2000
+267,Duke of Weselton,Alan Tudyk,Frozen
+268,Duke Weaselton,Alan Tudyk,Zootopia
+269,Dumbo,None,Dumbo
+270,Duncan,Horatio Sanz,Wreck-It Ralph
+271,Ed,Jim Cummings,The Lion King
+272,Edgar Balthazar the Butler,Roddy Maude-Roxby,The Aristocats
+273,Edward,Roger Rees,Return to Never Land
+274,Eema,Della Reese,Dinosaur
+275,Eeyore,Ralph Wright,Winnie the Pooh and the Honey Tree
+276,Einstein,Richard Mulligan,Oliver & Company
+277,El Capitan,Jim Cummings,DuckTales
+278,"Eli ""Big Daddy"" La Bouff",John Goodman,The Princess and the Frog
+279,Ellie Mae,Jeanette Nolan,The Rescuers
+280,Elliott,Charlie Callas,Pete's Dragon
+281,Elmer Elephant,None,Silly Symphonies
+282,Elsa,Idina Menzel,Frozen
+283,Emmitt Otterton,None,Zootopia
+284,Emperor of China,Pat Morita,Mulan
+285,The Enchantress,Kath Soucie,Beauty and the Beast: The Enchanted Christmas
+286,Esmeralda,Demi Moore,The Hunchback of Notre Dame
+287,Eudora,Oprah Winfrey,The Princess and the Frog
+288,Evangaline,None,The Princess and the Frog
+289,Evinrude,Jimmy MacDonald,The Rescuers
+290,Fa Li,Freda Foh Shen,Mulan
+291,Fa Zhou,Soon-Tek Oh,Mulan
+292,Fagin,Dom DeLuise,Oliver & Company
+293,Fairy Godmother,Verna Felton; Russi Taylor,Cinderella
+294,Fairy Mary,Jane Horrocks,Disney Fairies
+295,Faline,Cammie King; Ann Gillis,Bambi
+296,Fall-Apart Rabbit,Frank Welker,Bonkers
+297,Faloo,Carla Meyer,The Rescuers Down Under
+298,Fat Cat,Jim Cummings,Chip 'n Dale Rescue Rangers
+299,Father Wolf,Ben Wright,The Jungle Book
+300,Fauna,Barbara Jo Allen,Sleeping Beauty
+301,Fawn,America Ferrera,Disney Fairies
+302,Felicia the Cat,Frank Welker,The Great Mouse Detective
+303,Fenton Crackshell (Gizmoduck),Hamilton Camp,DuckTales
+304,Fenton Q. Harcourt,David Ogden Stiers,Atlantis: The Lost Empire
+305,Ferdie Fieldmouse,None,Mickey's Steam Roller
+306,Ferdinand the Bull,Milt Kahl,Silly Symphonies
+307,Fflewddur Fflam,Nigel Hawthorne,The Black Cauldron
+308,Fidget,Candy Candido,The Great Mouse Detective
+309,Fiddler Pig,Mary Moder,Three Little Pigs
+310,Fife the Piccolo,Paul Reubens,Beauty and the Beast: The Enchanted Christmas
+311,Fifer Pig,Dorothy Compton,Three Little Pigs
+312,Fifi the Featherduster,Kimmy Robertson,Beauty and the Beast
+313,Figaro the Cat,Mel Blanc,Pinocchio
+314,Figment,Dave Goelz,Journey into Imagination with Figment
+315,Finnick,"Tommy ""Tiny"" Lister Jr.",Zootopia
+316,First Ancestor Fa,George Takei,Mulan
+317,Firebird !The Firebird,Hugo Weaving,Fantasia 2000
+318,Fish Out of Water,Dan Molina,Chicken Little
+319,Fix-It Felix Jr.,Jack McBrayer,Wreck-It Ralph
+320,Flaps the Vulture,Chad Stuart,The Jungle Book
+321,Flash Slothmore,Raymond S. Persi,Zootopia
+322,Flintheart Glomgold,Hal Smith,DuckTales
+323,Flit,Frank Welker,Pocahontas
+324,Flora,Verna Felton,Sleeping Beauty
+325,Flotsam and Jetsam,Paddi Edwards,The Little Mermaid
+326,Flounder,Jason Marin,The Little Mermaid
+327,Flower,Stan Alexander; Sterling Holloway,Bambi
+328,Flunkey the Baboon,Leo De Lyon,The Jungle Book
+329,Flynn Rider,Zachary Levi,Tangled
+330,Footman,Larry Grey,Cinderella
+331,Forte the Pipe Organ,Tim Curry,Beauty and the Beast: The Enchanted Christmas
+332,Foxy Loxy,Amy Sedaris,Chicken Little
+333,Fran,Edie McClurg,Higglytown Heroes
+334,Francis,Roscoe Lee Browne,Oliver & Company
+335,Francois,Bronson Pinchot,Lady and the Tramp II: Scamp's Adventure
+336,Francois,Ed Gilbert,The Rescuers Down Under
+337,Frank,Wayne Robson,The Rescuers Down Under
+338,Frankie the Frog,Aurian Redson,Meet the Robinsons
+339,Franny Robinson,Nicole Sullivan,Meet the Robinsons
+340,Fred,S. Scott Bullock,Timon and Pumbaa
+341,Friar Tuck,Andy Devine,Robin Hood
+342,Friend Owl,Will Wright,Bambi
+343,Frou-Frou,Nancy Kulp,The Aristocats
+344,Gadget Hackwrench,Tress MacNeille,Chip 'n Dale Rescue Rangers
+345,"Gaetan ""Mole"" Moliére",Corey Burton,Atlantis: The Lost Empire
+346,Captain Gantu,Kevin Michael Richardson,Lilo & Stitch
+347,Gaston,Richard White,Beauty and the Beast
+348,Gazelle,Shakira,Zootopia
+349,General Hologram,Dennis Haysbert,Wreck-It Ralph
+350,General Li,James Shigeta,Mulan
+351,Genie,Robin Williams,Aladdin
+352,George Darling,Hans Conried,Peter Pan
+353,Georges Hautecourt,Charles Lane,The Aristocats
+354,Georgette,Bette Midler,Oliver & Company
+355,Geppetto,Christian Rub,Pinocchio
+356,Giddy the Elephant,Dorothy Scott,Dumbo
+357,Gideon,Mel Blanc,Pinocchio
+358,Giselle,Amy Adams,Enchanted
+359,Gladstone Gander,Rob Paulsen,DuckTales
+360,Gliss,Grey Delisle,Secret of the Wings
+361,Glittering Goldie,Joan Gerber,DuckTales
+362,Gloyd Orangeboar,None,Wreck-It Ralph
+363,Goob,Matthew Josten,Meet the Robinsons
+364,Goofy,Pinto Colvig; Bill Farmer,Mickey's Revue
+365,Goosey Loosey,Mark Walton,Chicken Little
+366,Gopher,Howard Morris; Michael Gough,Winnie the Pooh and the Honey Tree
+367,Gosalyn Mallard,Christine Cavanaugh,Darkwing Duck
+368,Governor John Ratcliffe,David Ogden Stiers,Pocahontas
+369,Grace,Jennifer Tilly,Home on the Range
+370,Gramma Tala,Rachel House,Moana
+371,Gramps,Larry Clemmons,The Rescuers
+372,Grand Councilwoman,Zoe Caldwell,Lilo & Stitch
+373,The Grand Duke,Luis Van Rooten; Rob Paulsen,Cinderella
+374,Grandma Duck,June Foray,"This is Your Life, Donald Duck"
+375,Grandmother Fa,June Foray,Mulan
+376,Grandmother Willow,Linda Hunt,Pocahontas
+377,Granny Rose,Vicki Lawrence,The Fox and the Hound 2
+378,Greasy the Weasel,Charles Fleischer,Who Framed Roger Rabbit
+379,Great Prince of the Forest,Fred Shields,Bambi
+380,Grimsby,Ben Wright,The Little Mermaid
+381,The Groundhog,Brian Pimental,Bambi II
+382,Grumpy,Pinto Colvig,Snow White and the Seven Dwarfs
+383,Gurgi,John Byner,The Black Cauldron
+384,Gus Lollygagger,Jimmy MacDonald; Corey Burton,Cinderella
+385,Gus Goose,Clarence Nash,Donald's Cousin Gus
+386,Gyro Gearloose,Hal Smith,DuckTales
+387,Hades,James Woods,Hercules
+388,Hands,Micheal McShane,Treasure Planet
+389,Happy,Otis Harlan,Snow White and the Seven Dwarfs
+390,Harold the Seahorse,Will Ryan,The Little Mermaid
+391,Haroud Hazi Bin,James Avery,Aladdin
+392,Harvey Fenner,Corey Burton,The Princess and the Frog
+393,Headless Horseman,None,The Adventures of Ichabod and Mr. Toad
+394,Heihei the Rooster,Alan Tudyk,Moana
+395,Helga Sinclair,Claudia Christian,Atlantis: The Lost Empire
+396,Hen Wen,None,The Black Cauldron
+397,Henry Fenner,Jerry Kernion,The Princess and the Frog
+398,Hera,Samantha Eggar,Hercules
+399,Herb Muddlefoot,Jim Cummings,Darkwing Duck
+400,Hercules,Tate Donovan; Joshua Keaton,Hercules
+401,Hermes,Paul Shaffer,Hercules
+402,Hiram Flaversham,Alan Young; Alan Young,The Great Mouse Detective
+403,Hit Cat the English Cat,Lord Tim Hudson,The Aristocats
+404,Honker Muddlefoot,Katie Leigh,Darkwing Duck
+405,Hook Hand,Brad Garrett,Tangled
+406,Hoonah,Tress MacNeille,Brother Bear 2
+407,Horace & Jasper,Frederick Worlock; J. Pat O'Malley,101 Dalmatians
+408,Horace Horsecollar,Walt Disney; Bill Farmer,The Plow Boy
+409,The Horned King,John Hurt,The Black Cauldron
+410,Huey,Clarence Nash; Russi Taylor,Donald's Nephews
+411,Hugo,Jason Alexander,The Hunchback of Notre Dame
+412,Humbert the Huntsman,Stuart Buchanan,Snow White and the Seven Dwarfs
+413,Humphrey the Bear,Jimmy MacDonald; Jim Cummings,Hold That Pose
+414,Hyacinth Hippo,Tress MacNeille,Fantasia
+415,Iago,Gilbert Gottfried,Aladdin
+416,Ian the Alligator,Kevin Michael Richardson,The Princess and the Frog
+417,Ichabod Crane,Pinto Colvig,The Adventures of Ichabod and Mr. Toad
+418,The Indian Chief,Candy Candido,Peter Pan
+419,Innoko,Wanda Sykes,Brother Bear 2
+420,Iridessa,Raven-Symoné,Disney Fairies
+421,J. Audubon Woodlore,Bill Thompson,Grin and Bear It
+422,J. Gander Hooter,Danny Mann,Darkwing Duck
+423,J. Thaddeus Toad,Eric Blore,The Adventures of Ichabod and Mr. Toad
+424,J. Worthington Foulfellow,Walter Catlett,Pinocchio
+425,Jack-in-the-Box,John Lithgow,Fantasia 2000
+426,"Jackson ""Jaq"" Hopscotch",Jimmy MacDonald; Rob Paulsen,Cinderella
+427,Jafar,Jonathan Freeman,Aladdin
+428,Jake,Tristan Rogers,The Rescuers Down Under
+429,Jane,Harriet Owen,Return to Never Land
+430,Jane Porter,Minnie Driver,Tarzan
+431,Jeb the Goat,Joe Flaherty,Home on the Range
+432,"Jennifer ""Jenny"" Foxworth",Natalie Gregory,Oliver & Company
+433,Jenny Wren,Martha Wentworth,Silly Symphonies
+434,Jerry Jumbeaux Jr.,John DiMaggio,Zootopia
+435,Jesse the Ram,John DiMaggio,Zootopia
+436,Jessica Rabbit,Kathleen Turner,Who Framed Roger Rabbit
+437,Jim Crow,Cliff Edwards,Dumbo
+438,Jim Dear,Lee Millar,Lady and the Tramp
+439,Jim Hawkins,Joseph Gordon-Levitt,Treasure Planet
+440,Jiminy Cricket,Cliff Edwards; Eddie Carroll,Pinocchio
+441,Jobless Joe,None,Fantasia 2000
+442,Jock,Bill Thompson,Lady and the Tramp
+443,Joe Giraffe,Pinto Colvig,Silly Symphonies
+444,Joey Hippo,None,Silly Symphonies
+445,John Darling,Paul Collins,Peter Pan
+446,John Silver,Brian Murray,Treasure Planet
+447,Johnny Appleseed,Dennis Day,Melody Time
+448,José Carioca,José Oliveira; Rob Paulsen,Saludos Amigos
+449,Jubileena Bing-Bing,Josie Trinidad,Wreck-It Ralph
+450,Judge Claude Frollo,Tony Jay,The Hunchback of Notre Dame
+451,Judge Doom,Christopher Lloyd,Who Framed Roger Rabbit
+452,Judy Hopps,Ginnifer Goodwin,Zootopia
+453,June,None,House of Mouse
+454,Junior,Clint Howard,The Jungle Book
+455,Junior the Buffalo,Lance LeGault,Home on the Range
+456,Kaa,Sterling Holloway; Jim Cummings,The Jungle Book
+457,Kala,Glenn Close,Tarzan
+458,Kanga,Barbara Luddy,Winnie the Pooh and the Honey Tree
+459,Kata,Catherine O'Hara,Brother Bear 2
+460,Katrina Van Tassel,None,The Adventures of Ichabod and Mr. Toad
+461,Kekata the Medicine man,Gordon Tootoosis,Pocahontas
+462,Kenai,Joaquin Phoenix,Brother Bear
+463,Kerchak,Lance Henriksen,Tarzan
+464,Kiara,Michelle Horn; Neve Campbell,The Lion King II: Simba's Pride
+465,The King,Luis Van Rooten,Cinderella
+466,The King of Hearts,Dink Trout,Alice in Wonderland
+467,King Candy/Turbo,Alan Tudyk,Wreck-It Ralph
+468,King Eiddileg,Arthur Malet,The Black Cauldron
+469,King Hubert,Bill Thompson,Sleeping Beauty
+470,King Kashekim Nedakh,Leonard Nimoy,Atlantis: The Lost Empire
+471,King Leonidas,Lennie Weinrib,Bedknobs and Broomsticks
+472,King Louie,Louis Prima,The Jungle Book
+473,King Richard,Peter Ustinov,Robin Hood
+474,King Roland II,Travis Willingham,Sofia the First
+475,King Stefan,Taylor Holmes,Sleeping Beauty
+476,King Triton,Kenneth Mars,The Little Mermaid
+477,Kirby,Sean Elmore,Chicken Little
+478,Kit Cloudkicker,R. J. Williams; Alan Roberts,TaleSpin
+479,Kocoum,James Apaumut Fall,Pocahontas
+480,Koda,Jeremy Suarez,Brother Bear
+481,Kovu,Ryan O'Donohue; Jason Marsden,The Lion King II: Simba's Pride
+482,Krebbs,Douglas Seale,The Rescuers Down Under
+483,Kristoff,Jonathan Groff,Frozen
+484,Kron,Samuel E. Wright,Dinosaur
+485,Kronk Pepikrankenitz,Patrick Warburton,The Emperor's New Groove
+486,Kuzco,David Spade,The Emperor's New Groove
+487,Lachesis,Carole Shelley,Hercules
+488,Lady,Barbara Luddy,Lady and the Tramp
+489,Lady DeBurne,April Winchell,The Hunchback of Notre Dame II
+490,Lady Kluck,Carole Shelley,Robin Hood
+491,Lady Mouse,Shani Wallis,The Great Mouse Detective
+492,Lady Tremaine,Eleanor Audley; Susanne Blakeslee,Cinderella
+493,Lafayette the Basset Hound,George Lindsey,The Aristocats
+494,Lampwick,Frankie Darro,Pinocchio
+495,Larry the Duck,Marshall Efron,Home on the Range
+496,Launchpad McQuack,Terry McGovern,DuckTales
+497,Laverne,Mary Wickes,The Hunchback of Notre Dame
+498,Lawrence the Valet,Peter Bartlett,The Princess and the Frog
+499,Le Fou,Jesse Corti,Beauty and the Beast
+500,Lefty,Nathan Greno,Meet the Robinsons
+501,Le Plufme,Rob Paulsen,Belle's Magical World
+502,Lewis,Jordan Fry,Meet the Robinsons
+503,Li Shang,B.D. Wong,Mulan
+504,Lil Bad Wolf,Andrew Lawrence,The Porker's Court
+505,Lilo Pelekai,Daveigh Chase,Lilo & Stitch
+506,Ling,Gedde Watanabe,Mulan
+507,Liquidator !The Liquidator,Jack Angel,Darkwing Duck
+508,Little John,Phil Harris,Robin Hood
+509,Little Toot,None,Melody Time
+510,Mr. Litwak,Ed O'Neill,Wreck-It Ralph
+511,Lizzy,Tracey Miller-Zarneke,Meet the Robinsons
+512,Lizzy Griffths,Lauren Mote,Tinker Bell and the Great Fairy Rescue
+513,Louie,Clarence Nash; Russi Taylor,Donald's Nephews
+514,Louie the Hot Dog Man,Frank Welker,Oliver & Company
+515,Louis the Alligator,Michael-Leon Wooley,The Princess and the Frog
+516,Lucifer the Cat,June Foray,Cinderella
+517,Lucille Krunklehorn,Laurie Metcalf,Meet the Robinsons
+518,Lucky,Mimi Gibson,One Hundred and One Dalmatians
+519,Lucky Jack,Charles Haid,Home on the Range
+520,Ludwig Von Drake,Paul Frees,An Adventure in Color
+521,Luke,Pat Buttram,The Rescuers
+522,Lumière,Jerry Orbach,Beauty and the Beast
+523,Lumpy the Heffalump,Kyle Stanger,Pooh's Heffalump Movie
+524,Lyle,Jeff Foxworthy,The Fox and the Hound 2
+525,Ma Beagle,June Foray,DuckTales
+526,Mad Hatter,Ed Wynn,Alice in Wonderland
+527,Madame Adelaide Bonfamille,Hermione Baddeley,The Aristocats
+528,Madame Medusa,Geraldine Page,The Rescuers
+529,Madam Mim,Martha Wentworth,The Sword in the Stone
+530,Madame Upanova,Tress MacNeille,Fantasia
+531,Madellaine,Jennifer Love Hewitt,The Hunchback of Notre Dame II
+532,Maggie,Roseanne Barr,Home on the Range
+533,Magic Carpet,None,Aladdin
+534,The Magic Mirror,Moroni Olsen,Snow White and the Seven Dwarfs
+535,Magica De Spell,June Foray,DuckTales
+536,Mahra the Baboon,Tress MacNeille,Jungle Cubs
+537,Maid Marian,Monica Evans,Robin Hood
+538,Major the Horse,None,Cinderella
+539,Maleficent,Eleanor Audley,Sleeping Beauty
+540,Malina,Jessica Di Cicco,The Emperor's New School
+541,Mama Odie,Jenifer Lewis,The Princess and the Frog
+542,Man the Hunter,None,Bambi
+543,Marahute,Frank Welker,The Rescuers Down Under
+544,March Hare,Jerry Colonna,Alice in Wonderland
+545,Marie,Liz English,The Aristocats
+546,Markowski,Joe Lo Truglio,Wreck-It Ralph
+547,Marlon the Alligator,Emeril Lagasse,The Princess and the Frog
+548,Mary Darling,Heather Angel,Peter Pan
+549,The Matchmaker,Miriam Margoyles,Mulan
+550,Maui,Dwayne Johnson,Moana
+551,Maurice,Rex Everhart,Beauty and the Beast
+552,Max Goof,Dana Hill; Jason Marsden,Goof Troop
+553,Max Hare,Ned Norton,The Tortoise and the Hare
+554,Max the Sheepdog,Frank Welker,The Little Mermaid
+555,Maximus,None,Tangled
+556,May,None,House of Mouse
+557,Mayor Lionheart,J.K. Simmons,Zootopia
+558,Mechanicles,Charlie Adler,Aladdin
+559,Meeko,John Kassir,Pocahontas
+560,Megabyte Beagle,Frank Welker,DuckTales
+561,Megara,Susan Egan,Hercules
+562,Megavolt,Dan Castellaneta,Darkwing Duck
+563,Melody,Tara Strong,The Little Mermaid II: Return to the Sea
+564,Melinda,None,Fantasia
+565,Melpomene,Cheryl Freeman,Hercules
+566,Melvin,Fred Willard,Chicken Little
+567,Mena,Cree Summer,Bambi II
+568,Merlin,Karl Swenson,The Sword in the Stone
+569,Merlock the Magician,Christopher Lloyd,DuckTales
+570,Merryweather,Barbara Luddy,Sleeping Beauty
+571,Michael Darling,Tommy Luske,Peter Pan
+572,Mickey Mouse,Walt Disney,Steamboat Willie
+573,Mike the Microphone,Rod Roddy,House of Mouse
+574,Mildred,Angela Bassett,Meet the Robinsons
+575,Milo Thatch,Michael J. Fox,Atlantis: The Lost Empire
+576,Mindy,Kari Wahlgren,Bolt
+577,Minnie Mouse,Walt Disney; Marcellite Garner,Plane Crazy
+578,Minty Zaki,None,Wreck-It Ralph
+579,Mirage,Bebe Neuwirth,Aladdin (TV series)
+580,Miranda Wright,Karla DeVito,Bonkers
+581,Miss Bianca,Eva Gabor,The Rescuers
+582,Miss Kitty,Melissa Manchester,The Great Mouse Detective
+583,Miss Nettle,Megan Mullally,Sofia the First
+584,Mittens,Susie Essman,Bolt
+585,Moana Waialiki,Auli'i Cravalho,Moana
+586,Moley,Colin Campbell,The Adventures of Ichabod and Mr. Toad
+587,Monsieur D'Arque,Tony Jay,Beauty and the Beast
+588,Monstro,Thurl Ravenscroft,Pinocchio
+589,Monterey Jack,Jim Cummings,Chip 'n Dale Rescue Rangers
+590,Mooch,Bill Fagerbakke,Lady and the Tramp II: Scamp's Adventure
+591,Morcupine Porcupine,Mark Dindal,Chicken Little
+592,Morgana,Pat Carroll,The Little Mermaid II: Return to the Sea
+593,Morgana McCawber,Kath Soucie,Darkwing Duck
+594,Morph,Dane A. Davis,Treasure Planet
+595,Mortimer Mouse,Maurice LaMarche,Mickey's Rival
+596,Morty Fieldmouse,None,Mickey's Steam Roller
+597,Mother Gothel,Donna Murphy,Tangled
+598,Mother Rabbit,Barbara Luddy,Robin Hood
+599,Mowgli,Bruce Reitherman,The Jungle Book
+600,Mozenrath,Jonathan Brandis,Aladdin
+601,Mr. Arrow,Roscoe Lee Browne,Treasure Planet
+602,Mr. Big,Maurice LaMarche,Zootopia
+603,Mr. Pettibone,Jeff Pidgeon,Mickey Mouse Clubhouse
+604,Mr. Smee,Bill Thompson,Peter Pan
+605,Mr. Snoops,Joe Flynn,The Rescuers
+606,Mr. Stork,Sterling Holloway,Dumbo
+607,Mr. Willerstein,Tom Kenny,Meet the Robinsons
+608,Mr. Woolensworth,Patrick Stewart,Chicken Little
+609,Mrs. Calloway,Judi Dench,Home on the Range
+610,Mrs. Featherby,June Foray,DuckTales
+611,Mrs. Hasagawa,Amy Hill,Lilo & Stitch
+612,Mrs. Judson,Diana Chesney,The Great Mouse Detective
+613,Mrs. Jumbo,Verna Felton,Dumbo
+614,Mrs. Otterton,Octavia Spencer,Zootopia
+615,Mrs. Possum,Mary Lansing,Bambi
+616,Mrs. Potts,Angela Lansbury,Beauty and the Beast
+617,Mrs. Quail,Thelma Boardman,Bambi
+618,Mufasa,James Earl Jones,The Lion King
+619,Mulan,Ming-Na Wen; Lea Salonga,Mulan
+620,Mungo,Jason Marsden,Tarzan
+621,Mushu,Eddie Murphy,Mulan
+622,Myrtle Edmonds,Miranda Paige Walls; Liliana Mumy,Lilo & Stitch
+623,Nakoma,Michelle St. John,Pocahontas
+624,Nala,Moira Kelly; Niketa Calame,The Lion King
+625,Nana,None,Peter Pan
+626,Nancy Tremaine,Idina Menzel,Enchanted
+627,Nani Pelekai,Tia Carrere,Lilo & Stitch
+628,Nanny,Martha Wentworth,One Hundred and One Dalmatians
+629,Napoleon the Bloodhound,Pat Buttram,The Aristocats
+630,Nasira,Jodi Benson,Aladdin in Nasira's Revenge
+631,Nathaniel,Timothy Spall,Enchanted
+632,Natives,Jeff Bennett,Timon and Pumbaa
+633,Ned the Baboon,Charlie Adler,Jungle Cubs
+634,Neera,Julianna Margulies,Dinosaur
+635,NegaDuck,Jim Cummings,Darkwing Duck
+636,Nessus,Jim Cummings,Hercules
+637,Nibs,Jeffrey Silver,Peter Pan
+638,"Nicholas ""Nick"" P. Wilde",Jason Bateman,Zootopia
+639,Nita,Mandy Moore,Brother Bear 2
+640,Nuka,Andy Dick,The Lion King II: Simba's Pride
+641,Nurse Mouse,Russi Taylor,The Rescuers Down Under
+642,Nutsy the Vulture,Ken Curtis,Robin Hood
+643,Oaken,Chris Williams,Frozen
+644,The Octopus,Frank Welker,Return to Never Land
+645,Olaf,Josh Gad,Frozen
+646,Oliver,Joey Lawrence,Oliver & Company
+647,Olivia Flaversham,Susanne Pollatschek,The Great Mouse Detective
+648,Ollie the Pig,Charlie Dell,Home on the Range
+649,Onus,Corey Burton,Treasure Planet
+650,Orddu,Eda Reiss Merin,The Black Cauldron
+651,Orgoch,Billie Hayes,The Black Cauldron
+652,Orville,Jim Jordan,The Rescuers
+653,Orwen,Adele Malis-Morey,The Black Cauldron
+654,Oswald the Lucky Rabbit,Frank Welker,Trolley Troubles
+655,Otto,J. Pat O'Malley,Robin Hood
+656,Owl,Hal Smith,Winnie the Pooh and the Honey Tree
+657,Pacha,John Goodman,The Emperor's New Groove
+658,Pain and Panic,Bobcat Goldthwait; Matt Frewer,Hercules
+659,Panchito Pistoles,Joaquin Garay; Carlos Alazraqui,The Three Caballeros
+660,Pascal,Frank Welker,Tangled
+661,Patch,Mickey Maga,One Hundred and One Dalmatians
+662,Pearl Gesner,Carole Cook,Home on the Range
+663,Peg,Peggy Lee,Lady and the Tramp
+664,Peg Pete,April Winchell,Goof Troop
+665,Pegasus,Frank Welker,Hercules
+666,Penny's Mom,Grey DeLisle,Bolt
+667,Penny,Sandra Abbott,One Hundred and One Dalmatians
+668,Penny,Michelle Stacy,The Rescuers
+669,Penny,Miley Cyrus,Bolt
+670,Pepper Ann Pearson,Kathleen Wilhoite,Pepper Ann
+671,Peppo the Italian Cat,Vito Scotti,The Aristocats
+672,Percival C. McLeach,George C. Scott,The Rescuers Down Under
+673,Percy,Danny Mann,Pocahontas
+674,Perdita,Cate Bauer,101 Dalmatians
+675,Periwinkle,Lucy Hale,Secret of the Wings
+676,Pete,Billy Bletcher; Jim Cummings,Alice Solves the Puzzle
+677,Pete Junior,Rob Paulsen,Goof Troop
+678,Peter Pan,Bobby Driscoll,Peter Pan
+679,Peter Pig,Pinto Colvig,The Wise Little Hen
+680,The Phantom Blot,Frank Welker; John O'Hurley,DuckTales
+681,Philoctetes,Danny DeVito,Hercules
+682,Philippe the Horse,Hal Smith,Beauty and the Beast
+683,Piglet,John Fiedler,Winnie the Pooh and the Blustery Day
+684,Pinocchio,Dickie Jones,Pinocchio
+685,Pip,Jeff Bennett; Kevin Lima,Enchanted
+686,Pistol Pete,Nancy Cartwright,Goof Troop
+687,Plio,Alfre Woodard,Dinosaur
+688,Pluto,Pinto Colvig; Bill Farmer,The Chain Gang
+689,Pocahontas,Irene Bedard; Judy Kuhn,Pocahontas
+690,Poe De Spell,Terry McGovern; Frank Welker,DuckTales
+691,Pom-Pom,Frank Welker,Cinderella II: Dreams Come True
+692,Pongo,Rod Taylor,101 Dalmatians
+693,Powerline,Tevin Campbell,A Goofy Movie
+694,Practical Pig,Pinto Colvig,Three Little Pigs
+695,Preston B. Whitmore,John Mahoney,Atlantis: The Lost Empire
+696,Prince,Harry Stockwell,Snow White and the Seven Dwarfs
+697,Prince Charming,William Phipps,Cinderella
+698,Prince Edward,James Marsden,Enchanted
+699,Prince Eric,Christopher Daniel Barnes,The Little Mermaid
+700,Prince Hans,Santino Fontana,Frozen
+701,Prince James,Zach Callison,Sofia the First
+702,Prince John,Peter Ustinov,Robin Hood
+703,Prince Naveen,Bruno Campos,The Princess and the Frog
+704,Prince Phillip,Bill Shirley,Sleeping Beauty
+705,Princess,Queenie Leonard,One Hundred and One Dalmatians
+706,Princess Amber,Darcy Rose Byrnes,Sofia the First
+707,Princess Eilonwy,Susan Sheridan,The Black Cauldron
+708,Princess Jasmine,Linda Larkin; Lea Salonga,Aladdin
+709,Princess Kidagakash,Cree Summer,Atlantis: The Lost Empire
+710,Principal Mazur,Wallace Shawn,A Goofy Movie
+711,Prissy the Elephant,Sarah Selby,Dumbo
+712,Professor Norton Nimnul,Jim Cummings,Chip 'n Dale Rescue Rangers
+713,Professor Ratigan,Vincent Price,The Great Mouse Detective
+714,Pronk Oryx-Antlerson,Jared Bush,Zootopia
+715,Prudence,Holland Taylor,Cinderella II: Dreams Come True
+716,Psycho the Weasel,Charles Fleischer,Who Framed Roger Rabbit
+717,Pua,None,Moana
+718,Pumbaa,Ernie Sabella,The Lion King
+719,Quackerjack,Michael Bell,Darkwing Duck
+720,Quasimodo,Tom Hulce,The Hunchback of Notre Dame
+721,Queen,Kari Wahlgren,Tangled Ever After
+722,Queen Athena,Lorelei Hill Butters,The Little Mermaid: Ariel's Beginning
+723,Queen Clarion,Anjelica Huston,Disney Fairies
+724,Queen Grimhilde,Lucille La Verne,Snow White and the Seven Dwarfs
+725,Queen Leah,Barbara Dirikson,Sleeping Beauty
+726,Queen Miranda,Sara Ramirez,Sofia the First
+727,Queen Mousetoria,Eve Brenner,The Great Mouse Detective
+728,Queen Narissa,Susan Sarandon,Enchanted
+729,The Queen of Hearts,Verna Felton,Alice in Wonderland
+730,Quint,Corey Burton,Timon and Pumbaa
+731,Rabbit,Junius Matthews,Winnie the Pooh and the Honey Tree
+732,Rachel,None,Fantasia 2000
+733,Rafiki,Robert Guillaume,The Lion King
+734,Rajah,Frank Welker,Aladdin
+735,Rancis Fluggerbutter,Jamie Elman,Wreck-It Ralph
+736,Rapunzel,Mandy Moore,Tangled
+737,Ratty,Claud Allister,The Adventures of Ichabod and Mr. Toad
+738,Ray the Firefly,Jim Cummings,The Princess and the Frog
+739,Razoul,Jim Cummings,Aladdin
+740,Red,Peter Firth,The Rescuers Down Under
+741,Rhino,Mark Walton,Bolt
+742,Rhoda Dendron,Jennifer Darling,Darkwing Duck
+743,Rico,Charles Dennis,Home on the Range
+744,The Ringmaster,Herman Bing,Dumbo
+745,Rita,Sheryl Lee Ralph,Oliver & Company
+746,"Robert ""Bobby"" Zimmeruski",Pauly Shore,A Goofy Movie
+747,Robin Hood,Brian Bedford,Robin Hood
+748,Roger Rabbit,Charles Fleischer,Who Framed Roger Rabbit
+749,Roger Radcliffe,Ben Wright,101 Dalmatians
+750,Rolly,Barbara Beaird,One Hundred and One Dalmatians
+751,Ronno,Anthony Ghannam,Bambi II
+752,Roo,Clint Howard,Winnie the Pooh and the Honey Tree
+753,Roo,Dori Whittaker,Winnie the Pooh and the Honey Tree
+754,Roquefort the Mouse,Sterling Holloway,The Aristocats
+755,Roscoe,Taurean Blacque,Oliver & Company
+756,The Rose,Doris Lloyd,Alice in Wonderland
+757,Rosetta,Kristin Chenoweth,Disney Fairies
+758,Roxanne,Kellie Martin,A Goofy Movie
+759,Ruby,Cathy Moriarty,Lady and the Tramp II: Scamp's Adventure
+760,Rufus,John McIntire,The Rescuers
+761,Runt of the Litter,Steve Zahn,Chicken Little
+762,Rusty the Dog,G.W. Bailey,Home on the Range
+763,Rutt and Tuke,Rick Moranis; Dave Thomas,Brother Bear
+764,Sa'luk,Jerry Orbach,Aladdin and the King of Thieves
+765,Sadira,Kellie Martin,Aladdin
+766,Sam Flynn,Garrett John Hedlund,Tron: Legacy
+767,Sam the Sheriff,Richard Riehle,Home on the Range
+768,Sarabi,Madge Sinclair,The Lion King
+769,Sarafina,Zoe Leader,The Lion King
+770,Sarah Hawkins,Laurie Metcalf,Treasure Planet
+771,Sarousch,Michael McKean,The Hunchback of Notre Dame II
+772,Scamp,Scott Wolf,Lady and the Tramp II: Scamp's Adventure
+773,Scar,Jeremy Irons,The Lion King
+774,Scat Cat,Scatman Crothers,The Aristocats
+775,Scratchy,None,Lady and the Tramp II: Scamp's Adventure
+776,Scrooge McDuck,Alan Young,DuckTales
+777,Scroop,Michael Wincott,Treasure Planet
+778,Scuttle,Buddy Hackett,The Little Mermaid
+779,Sebastian,Samuel E. Wright,The Little Mermaid
+780,Secretary Bird,Lennie Weinrib,Bedknobs and Broomsticks
+781,Sergeant Calhoun,Jane Lynch,Wreck-It Ralph
+782,Sgt. Tibbs,David Frankham,101 Dalmatians
+783,Shan Yu,Miguel Ferrer,Mulan
+784,Shanti (The Girl),Darleen Carr,The Jungle Book
+785,Sha-ron,Mary Gibbs,Mulan 2
+786,Shenzi,Whoopi Goldberg,The Lion King
+787,Shere Khan,George Sanders,The Jungle Book
+788,Sheriff of Nottingham,Pat Buttram,Robin Hood
+789,Shun Gon the Chinese Cat,Paul Winchell,The Aristocats
+790,Si & Am,Peggy Lee,Lady and the Tramp
+791,Silvermist,Lucy Liu,Disney Fairies
+792,Simba,Jonathan Taylor Thomas,The Lion King
+793,Simba,Matthew Broderick,The Lion King
+794,Sir Ector,Sebastian Cabot,The Sword in the Stone
+795,Sir Giles,Claud Allister,The Reluctant Dragon
+796,Sir Hiss,Terry-Thomas,Robin Hood
+797,Sir Kay,Norman Alden,The Sword in the Stone
+798,Sir Pellinore,Alan Napier,The Sword in the Stone
+799,Sis Bunny,Dana Laurita,Robin Hood
+800,Sitka,D. B. Sweeney,Brother Bear
+801,Skippy Bunny,Billy Whittaker,Robin Hood
+802,Sleepy,Pinto Colvig,Snow White and the Seven Dwarfs
+803,Slightly,Stuffy Singer,Peter Pan
+804,Smarty the Weasel,David Lander,Who Framed Roger Rabbit
+805,Smolder the Bear,Jim Cummings,Timon and Pumbaa
+806,Sneezy,Billy Gilbert,Snow White and the Seven Dwarfs
+807,Snow White,Adriana Caselotti,Snow White and the Seven Dwarfs
+808,Snowanna Rainbeau,None,Wreck-It Ralph
+809,Princess Sofia,Ariel Winter,Sofia the First
+810,Sour Bill,Rich Moore,Wreck-It Ralph
+811,Sparky,Mickey Rooney,Lady and the Tramp II: Scamp's Adventure
+812,Speedy the Snail,Corey Burton,Timon and Pumbaa
+813,Spot,Tara Strong,101 Dalmatians: The Series
+814,Spring Sprite,Helena Bonham Carter,Fantasia 2000
+815,Squeaks the Caterpillar,None,The Fox and the Hound
+816,Stabbington Brothers,Ron Perlman,Tangled
+817,Steelbeak,Rob Paulsen,Darkwing Duck
+818,Stitch,Chris Sanders,Lilo & Stitch
+819,Stromboli,Charles Judels,Pinocchio
+820,Stu Hopps,Don Lake,Zootopia
+821,Stupid the Weasel,Fred Newman,Who Framed Roger Rabbit
+822,The Sultan,Douglas Seale,Aladdin
+823,Sultan the Footstool,Frank Welker,Beauty and the Beast
+824,Suri,Hayden Panettiere,Dinosaur
+825,Sven,None,Frozen
+826,"Swizzle ""The Swizz"" Malarkey",None,Wreck-It Ralph
+827,Sykes,Robert Loggia,Oliver & Company
+828,Sylvia Marpole,Bebe Neuwirth,An Extremely Goofy Movie
+829,Tadashi Hamada,Daniel Henney,Big Hero 6
+830,Taffyta Muttonfudge,Mindy Kaling,Wreck-It Ralph
+831,Tagalong Bunny,Dori Whittaker,Robin Hood
+832,Tamatoa,Jemaine Clement,Moana
+833,Tanana,Joan Copeland,Brother Bear
+834,Tank,Brad Garrett,An Extremely Goofy Movie
+835,Tank Muddlefoot,Dana Hill,Darkwing Duck
+836,Tantor,Wayne Knight,Tarzan
+837,Taran,Grant Bardsley,The Black Cauldron
+838,Tarzan,Tony Goldwyn,Tarzan
+839,Tarzan,Alex D. Linz,Tarzan
+840,Taurus Bulba,Tim Curry,Darkwing Duck
+841,Ted Betterhead,Diedrich Bader,The Country Bears
+842,Terence,Jesse McCartney,Disney Fairies
+843,Terk,Rosie O'Donnell,Tarzan
+844,Terpsichore,LaChanze,Hercules
+845,Thalia,Roz Ryan,Hercules
+846,Thomas,Christian Bale,Pocahontas
+847,Thomas O'Malley,Phil Harris,The Aristocats
+848,Thug,Randy Savage,Bolt
+849,Thumper,Peter Behn; Sam Edwards,Bambi
+850,Thumper's Mother,Margaret Lee,Bambi
+851,Tiana,Anika Noni Rose,The Princess and the Frog
+852,Tiger Lily,Cree Summer,Peter Pan
+853,Tigger,Paul Winchell,Winnie the Pooh and the Blustery Day
+854,Tillie Tiger,Alyce Ardell,Silly Symphonies
+855,Timon,Nathan Lane,The Lion King
+856,Timon's Mother,Julie Kavner,The Lion King 1½
+857,Timothy Q. Mouse,Edward Brophy,Dumbo
+858,Tina,Catherine O'Hara,Chicken Little
+859,Tinker Bell,Mae Whitman,Peter Pan
+860,Tino Tonitini,Jason Marsden,The Weekenders
+861,Tiny,Joe Mateo,Meet the Robinsons
+862,Tip,Max Casella,The Little Mermaid II: Return to the Sea
+863,Tipo,Eli Russell Linnetz,The Emperor's New Groove
+864,Tito,Cheech Marin,Oliver & Company
+865,Tobias the Reluctant Dragon,Barnett Parker,The Reluctant Dragon
+866,Toby the Dog,Frank Welker,The Great Mouse Detective
+867,Toby Tortoise,Eddie Holden,The Tortoise and the Hare
+868,Toby Turtle,Richie Sanders,Robin Hood
+869,Tod,Keith Coogan; Mickey Rooney,The Fox and the Hound
+870,Tootles,None,Peter Pan
+871,Toots,Frank Welker,Bonkers
+872,Toulouse,Gary Dubin,The Aristocats
+873,Tramp,Larry Roberts,Lady and the Tramp
+874,Trigger the Vulture,George Lindsey,Robin Hood
+875,Trusty,Bill Baucom,Lady and the Tramp
+876,Tug,Michael Clarke Duncan,Brother Bear
+877,Tui Waialiki,Temuera Morrison,Moana
+878,Turkey Lurkey,Don Knotts,Chicken Little
+879,Tuskernini,Kenneth Mars,Darkwing Duck
+880,Tweedledum and Tweedledee,J. Pat O'Malley,Alice in Wonderland
+881,Two Fingers,Paul Briggs,The Princess and the Frog
+882,Uncle Art,Adam West,Meet the Robinsons
+883,Uncle Max,Jerry Stiller,The Lion King 1½
+884,Uncle Waldo,Bill Thompson,The Aristocats
+885,Url,None,Dinosaur
+886,Ursula,Pat Carroll,The Little Mermaid
+887,Vanellope von Schweetz,Sarah Silverman,Wreck-It Ralph
+888,Vanessa (The Little Mermaid),Pat Carroll; Jodi Benson,The Little Mermaid
+889,Veteran Cat,Diedrich Bader,Bolt
+890,Victor,Charles Kimbrough,The Hunchback of Notre Dame
+891,Vidia,Pamela Adlon,Disney Fairies
+892,"Vincenzo ""Vinny"" Santorini",Don Novello,Atlantis: The Lost Empire
+893,Vitani,Lacey Chabert; Jennifer Lien,The Lion King II: Simba's Pride
+894,Vixey,Sandy Duncan,The Fox and the Hound
+895,Vladimir Goudenov Grizzlikof,Ron Feinberg,Darkwing Duck
+896,Vulture Police,Townsend Coleman; Brian Cummings,Timon and Pumbaa
+897,Waffles,Frank Welker,Goof Troop
+898,The Walrus,J. Pat O'Malley,Alice in Wonderland
+899,Webby Vanderquack,Russi Taylor,DuckTales
+900,Webster,Jim Cummings,Belle's Magical World
+901,Wendy Darling,Kathryn Beaumont,Peter Pan
+902,Wesley,Steve Buscemi,Home on the Range
+903,Wheezy the Weasel,June Foray,Who Framed Roger Rabbit
+904,White Rabbit,Bill Thompson,Alice in Wonderland
+905,Widow Tweed,Jeanette Nolan,The Fox and the Hound
+906,Wiggins,David Ogden Stiers,Pocahontas
+907,Wilbur,John Candy,The Rescuers Down Under
+908,Wilbur Robinson,Wesley Singerman,Meet the Robinsons
+909,Wilhelmina Packard,Florence Stanley,Atlantis: The Lost Empire
+910,Willie the Giant,Billy Gilbert,Fun and Fancy Free
+911,Winifred the Elephant,Verna Felton,The Jungle Book
+912,Winkie the Barman,Oliver Wallace,The Adventures of Ichabod and Mr. Toad
+913,Winnie the Pooh,Sterling Holloway,Winnie the Pooh and the Honey Tree
+914,Winston,William Glover,Oliver & Company
+915,Witherspoon,None,Belle's Magical World
+916,Woolter the Ram,John DiMaggio,Zootopia
+917,Wormwood the Raven,Jim Cummings,Sofia the First
+918,Wreck-It Ralph,John C. Reilly,Wreck-It Ralph
+919,Wynchel,Adam Carolla,Wreck-It Ralph
+920,Xerxes,Frank Welker,Aladdin (TV series)
+921,Yao,Harvey Fierstein,Mulan
+922,Yar,Ossie Davis,Dinosaur
+923,Yax,Tommy Chong,Zootopia
+924,Yen Sid,Corey Burton,Fantasia
+925,Yo-Yo,None,Fantasia 2000
+926,Yzma,Eartha Kitt,The Emperor's New Groove
+927,Zarina,Christina Hendricks,The Pirate Fairy
+928,Zazu,Rowan Atkinson,The Lion King
+929,Zephyr,Haley Joel Osment,The Hunchback of Notre Dame II
+930,Zeus,Rip Torn,Hercules
+931,Ziggy the Vulture,Digby Wolfe,The Jungle Book
+932,Zini,Max Casella,Dinosaur
+933,Zipper,Corey Burton,Chip 'n Dale Rescue Rangers
+934,Zira,Suzanne Pleshette,The Lion King II: Simba's Pride
