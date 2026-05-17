@@ -288,6 +288,11 @@ class Substrate:
 
         
 
+        # For range operators, detect numeric values and cast both sides to DOUBLE
+        # so that "21" < "5" is not evaluated as a string comparison.
+        # TRY_CAST returns NULL on failure, so non-numeric values are safely excluded.
+        _is_numeric = isinstance(value, (int, float))
+
         if op == "eq":
             rows = self._conn.execute(
                 "SELECT DISTINCT entity_id FROM snf_spoke "
@@ -303,32 +308,64 @@ class Substrate:
             ).fetchall()
 
         elif op == "gt":
-            rows = self._conn.execute(
-                "SELECT DISTINCT entity_id FROM snf_spoke "
-                "WHERE dimension = ? AND semantic_key = ? AND value > ? AND lens_id = ?",
-                [dim, key, str(value), self._lens_id]
-            ).fetchall()
+            if _is_numeric:
+                rows = self._conn.execute(
+                    "SELECT DISTINCT entity_id FROM snf_spoke "
+                    "WHERE dimension = ? AND semantic_key = ? "
+                    "AND TRY_CAST(value AS DOUBLE) > ? AND lens_id = ?",
+                    [dim, key, float(value), self._lens_id]
+                ).fetchall()
+            else:
+                rows = self._conn.execute(
+                    "SELECT DISTINCT entity_id FROM snf_spoke "
+                    "WHERE dimension = ? AND semantic_key = ? AND value > ? AND lens_id = ?",
+                    [dim, key, str(value), self._lens_id]
+                ).fetchall()
 
         elif op == "lt":
-            rows = self._conn.execute(
-                "SELECT DISTINCT entity_id FROM snf_spoke "
-                "WHERE dimension = ? AND semantic_key = ? AND value < ? AND lens_id = ?",
-                [dim, key, str(value), self._lens_id]
-            ).fetchall()
+            if _is_numeric:
+                rows = self._conn.execute(
+                    "SELECT DISTINCT entity_id FROM snf_spoke "
+                    "WHERE dimension = ? AND semantic_key = ? "
+                    "AND TRY_CAST(value AS DOUBLE) < ? AND lens_id = ?",
+                    [dim, key, float(value), self._lens_id]
+                ).fetchall()
+            else:
+                rows = self._conn.execute(
+                    "SELECT DISTINCT entity_id FROM snf_spoke "
+                    "WHERE dimension = ? AND semantic_key = ? AND value < ? AND lens_id = ?",
+                    [dim, key, str(value), self._lens_id]
+                ).fetchall()
 
         elif op == "gte":
-            rows = self._conn.execute(
-                "SELECT DISTINCT entity_id FROM snf_spoke "
-                "WHERE dimension = ? AND semantic_key = ? AND value >= ? AND lens_id = ?",
-                [dim, key, str(value), self._lens_id]
-            ).fetchall()
+            if _is_numeric:
+                rows = self._conn.execute(
+                    "SELECT DISTINCT entity_id FROM snf_spoke "
+                    "WHERE dimension = ? AND semantic_key = ? "
+                    "AND TRY_CAST(value AS DOUBLE) >= ? AND lens_id = ?",
+                    [dim, key, float(value), self._lens_id]
+                ).fetchall()
+            else:
+                rows = self._conn.execute(
+                    "SELECT DISTINCT entity_id FROM snf_spoke "
+                    "WHERE dimension = ? AND semantic_key = ? AND value >= ? AND lens_id = ?",
+                    [dim, key, str(value), self._lens_id]
+                ).fetchall()
 
         elif op == "lte":
-            rows = self._conn.execute(
-                "SELECT DISTINCT entity_id FROM snf_spoke "
-                "WHERE dimension = ? AND semantic_key = ? AND value <= ? AND lens_id = ?",
-                [dim, key, str(value), self._lens_id]
-            ).fetchall()
+            if _is_numeric:
+                rows = self._conn.execute(
+                    "SELECT DISTINCT entity_id FROM snf_spoke "
+                    "WHERE dimension = ? AND semantic_key = ? "
+                    "AND TRY_CAST(value AS DOUBLE) <= ? AND lens_id = ?",
+                    [dim, key, float(value), self._lens_id]
+                ).fetchall()
+            else:
+                rows = self._conn.execute(
+                    "SELECT DISTINCT entity_id FROM snf_spoke "
+                    "WHERE dimension = ? AND semantic_key = ? AND value <= ? AND lens_id = ?",
+                    [dim, key, str(value), self._lens_id]
+                ).fetchall()
 
         elif op == "contains":
             rows = self._conn.execute(
@@ -346,12 +383,20 @@ class Substrate:
 
         elif op == "between":
             value2 = c.get("value2", value)
-            rows = self._conn.execute(
-                "SELECT DISTINCT entity_id FROM snf_spoke "
-                "WHERE dimension = ? AND semantic_key = ? "
-                "AND value >= ? AND value <= ? AND lens_id = ?",
-                [dim, key, str(value), str(value2), self._lens_id]
-            ).fetchall()
+            if _is_numeric:
+                rows = self._conn.execute(
+                    "SELECT DISTINCT entity_id FROM snf_spoke "
+                    "WHERE dimension = ? AND semantic_key = ? "
+                    "AND TRY_CAST(value AS DOUBLE) >= ? AND TRY_CAST(value AS DOUBLE) <= ? AND lens_id = ?",
+                    [dim, key, float(value), float(value2), self._lens_id]
+                ).fetchall()
+            else:
+                rows = self._conn.execute(
+                    "SELECT DISTINCT entity_id FROM snf_spoke "
+                    "WHERE dimension = ? AND semantic_key = ? "
+                    "AND value >= ? AND value <= ? AND lens_id = ?",
+                    [dim, key, str(value), str(value2), self._lens_id]
+                ).fetchall()
 
         else:
             raise CompileError(f"Unknown operator: '{op}'")

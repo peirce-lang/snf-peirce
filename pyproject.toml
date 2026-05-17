@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "snf-peirce"
-version = "0.2.1"
+version = "0.2.3"
 description = "SNF/Peirce semantic query engine for retrieving data by WHO/WHAT/WHEN/WHERE/WHY/HOW instead of SQL joins"
 authors = [
     {name = "Alexander Kern"}
 ]
 readme = "README.md"
-license = {text = "MIT"}
+license = {text = "Apache-2.0"}
 requires-python = ">=3.9"
 dependencies = [
     "pandas>=1.5",
