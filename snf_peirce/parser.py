@@ -61,6 +61,7 @@ class T:
     BOOLEAN    = "BOOLEAN"
     LPAREN     = "LPAREN"
     RPAREN     = "RPAREN"
+    COMMA      = "COMMA"
     EOF        = "EOF"
 
 
@@ -154,6 +155,12 @@ def tokenize(input_str):
         # Dot
         if input_str[i] == '.':
             tokens.append({"type": T.DOT, "value": ".", "position": start})
+            i += 1
+            continue
+
+        # Comma — used in ONLY set lists
+        if input_str[i] == ',':
+            tokens.append({"type": T.COMMA, "value": ",", "position": start})
             i += 1
             continue
 
@@ -387,13 +394,42 @@ class _Parser:
             return {"success": False, "error": f"Expected field name after '{dimension}.' but got '{got}'", "position": field_tok["position"], "token": field_tok["value"]}
         field = self._consume()["value"]
 
-        # ONLY
+        # ONLY — scalar form: WHAT.color ONLY "Blue"
+        #        set form:    WHAT.color ONLY ("Blue", "Black")
         if self._peek()["type"] == T.KEYWORD and self._peek()["value"] == "ONLY":
-            self._consume()
+            self._consume()  # consume ONLY
+
+            # Set form — ONLY (v1, v2, ...)
+            if self._peek()["type"] == T.LPAREN:
+                vlist = self._parse_value_list()
+                if not vlist["success"]:
+                    return vlist
+                if len(vlist["values"]) == 1:
+                    # Single value in parens — collapse to scalar form, no bracket needed
+                    return {"success": True, "constraint": {
+                        "dimension": dimension, "field": field,
+                        "operator": "only", "value": vlist["values"][0], "negated": False
+                    }}
+                # Multi-value — emit as grouped conjunct of scalar ONLY constraints
+                # peirce.py _execute_conjunct already groups these correctly
+                constraints = [
+                    {"dimension": dimension, "field": field,
+                     "operator": "only", "value": v, "negated": False}
+                    for v in vlist["values"]
+                ]
+                return {"success": True, "constraint": {
+                    "grouped": True,
+                    "conjunct": {"constraints": constraints}
+                }}
+
+            # Scalar form — ONLY "Blue"
             val = self._parse_value()
             if not val["success"]:
                 return val
-            return {"success": True, "constraint": {"dimension": dimension, "field": field, "operator": "only", "value": val["value"], "negated": False}}
+            return {"success": True, "constraint": {
+                "dimension": dimension, "field": field,
+                "operator": "only", "value": val["value"], "negated": False
+            }}
 
         # BETWEEN
         if self._peek()["type"] == T.KEYWORD and self._peek()["value"] == "BETWEEN":
@@ -435,6 +471,48 @@ class _Parser:
             return {"success": True, "value": tok["value"]}
         got = tok["value"] if tok["value"] is not None else "EOF"
         return {"success": False, "error": f"Expected a value (string, number, or boolean) but got '{got}'", "position": tok["position"], "token": tok["value"]}
+
+    def _parse_value_list(self):
+        """
+        Parse a parenthesised list of values for ONLY set form.
+
+        Syntax: ( value , value , ... )
+
+        Returns:
+            {"success": True,  "values": [v1, v2, ...]}
+            {"success": False, "error": ..., "position": ..., "token": ...}
+
+        Requires at least one value. Trailing comma not permitted.
+        """
+        # consume (
+        lparen = self._expect(T.LPAREN)
+        if not lparen["success"]:
+            return lparen
+
+        values = []
+
+        # first value — required
+        first = self._parse_value()
+        if not first["success"]:
+            return first
+        values.append(first["value"])
+
+        # subsequent values — comma-separated
+        while True:
+            tok = self._peek()
+            if tok["type"] != T.COMMA:
+                break
+            self._consume()  # consume comma
+            nxt = self._parse_value()
+            if not nxt["success"]:
+                return nxt
+            values.append(nxt["value"])
+
+        rparen = self._expect(T.RPAREN)
+        if not rparen["success"]:
+            return rparen
+
+        return {"success": True, "values": values}
 
 
 # ─────────────────────────────────────────────────────────────────────────────

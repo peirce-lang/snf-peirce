@@ -1,7 +1,5 @@
 # snf-peirce
 
-# snf-peirce
-
 Query data by WHO/WHAT/WHEN/WHERE/WHY/HOW instead of writing SQL joins.
 
 Map your data to meaning once. Query it in plain language forever. No SQL. No physical schema knowledge. No joins.
@@ -21,42 +19,36 @@ compiled = compile_data(df, lens)
 query(compiled, 'WHO.artist = "Miles Davis" AND WHEN.released = "1959"')
 ```
 
----
-
 ## What is SNF?
 
 SNF (Semantic Normalized Form) is a data model and query protocol built around six universal dimensions:
 
 | Dimension | Meaning | Examples |
-|---|---|---|
-| **WHO** | People, organisations, roles | author, publisher, attorney, artist |
-| **WHAT** | Things, topics, identifiers | title, subject, ISBN, genre |
-| **WHEN** | Dates, years, time periods | publication_date, year, date_added |
-| **WHERE** | Places, locations, regions | publication_place, office, territory |
-| **WHY** | Reasons, types, purposes | matter_type, audience, format_legal |
-| **HOW** | Methods, formats, measurements | carrier_type, cmc, media_type |
+|-----------|---------|---------|
+| WHO | People, organisations, roles | author, publisher, attorney, artist |
+| WHAT | Things, topics, identifiers | title, subject, ISBN, genre |
+| WHEN | Dates, years, time periods | publication_date, year, date_added |
+| WHERE | Places, locations, regions | publication_place, office, territory |
+| WHY | Reasons, types, purposes | matter_type, audience, format_legal |
+| HOW | Methods, formats, measurements | carrier_type, cmc, media_type |
 
 Every fact in your data maps to one of these dimensions. Once mapped, you query by meaning — not by column name, table structure, or JOIN logic.
 
-**Peirce** is the query language for SNF. Named after Charles Sanders Peirce, whose triadic sign relation maps directly onto the SNF record structure: Dimension → SemanticKey → Value.
-
----
+Peirce is the query language for SNF. Named after Charles Sanders Peirce, whose triadic sign relation maps directly onto the SNF record structure: Dimension → SemanticKey → Value.
 
 ## Install
 
-```bash
+```
 pip install snf-peirce
 ```
 
 Or clone and use directly:
 
-```bash
+```
 git clone https://github.com/peirce-lang/snf-peirce
 cd snf-peirce
 pip install -e .
 ```
-
----
 
 ## Quick start
 
@@ -101,11 +93,9 @@ query(compiled, 'WHO.author = "Miles Davis"')
 query(compiled, 'WHEN.publication_date BETWEEN "1955" AND "1965"')
 ```
 
----
-
 ## Interactive shell
 
-```bash
+```
 python shell.py csv://my_spoke_dir
 ```
 
@@ -122,29 +112,26 @@ peirce> exit
 ```
 
 Shell features beyond the JS version:
-- **TAB completion** — field names from the actual substrate
-- **`\explain`** — execution plan with cardinality bars
-- **`\schema`** — dimensions, fields, entity and value counts
-- **Discovery expressions** — `WHO|*`, `WHAT|genre|*` work inline
 
----
+- TAB completion — field names from the actual substrate
+- `\explain` — execution plan with cardinality bars
+- `\schema` — dimensions, fields, entity and value counts
+- Discovery expressions — `WHO|*`, `WHAT|genre|*` work inline
 
 ## Guided setup (no coding required)
 
-```bash
+```
 python guided_ingest.py
 python guided_ingest.py mydata.csv
 ```
 
 Walks through CSV → lens authoring → compilation → shell with prompts. No code required.
 
----
-
 ## Fetch from public APIs
 
 ### Scryfall (Magic: The Gathering)
 
-```bash
+```
 pip install requests
 python fetch_scryfall.py              # Guilds of Ravnica (default)
 python fetch_scryfall.py war          # War of the Spark
@@ -153,16 +140,23 @@ python fetch_scryfall.py --list       # see available sets
 
 ```
 peirce> WHAT.guild = "Dimir"
-peirce> WHAT.color = "Blue" AND WHAT.color = "Black"
+peirce> WHAT.color ONLY ("Blue", "Black")
 peirce> WHAT.card_type = "Creature" AND HOW.cmc BETWEEN "1" AND "3"
 peirce> WHAT.keyword = "Surveil"
 peirce> WHO.artist = "Seb McKinnon"
 peirce> WHAT|guild|*
+peirce> WHO|artist|*
 ```
+
+Note: `WHAT.guild = "Dimir"` and `WHAT.color ONLY ("Blue", "Black")` return different
+result sets by design. Guild affiliation includes colorless cards (lands, artifacts)
+that belong to Dimir thematically but have no color identity. The ONLY query returns
+cards that are exclusively blue-black. Both answers are correct — they answer
+different questions.
 
 ### Library of Congress catalog
 
-```bash
+```
 python fetch_loc.py                          # default: jazz music
 python fetch_loc.py "toni morrison"          # keyword search
 python fetch_loc.py --subject "cooking"      # subject search
@@ -210,8 +204,6 @@ if __name__ == "__main__":
     MyAPIFetcher().run()
 ```
 
----
-
 ## Peirce query syntax
 
 ```
@@ -221,7 +213,8 @@ WHEN.released > "1960"                             comparison
 WHEN.released BETWEEN "1955" AND "1965"            range (inclusive)
 WHAT.title CONTAINS "Blue"                         substring
 WHO.artist PREFIX "Miles"                          starts with
-WHAT.color ONLY "Red"                              exclusivity (no other value exists)
+WHAT.color ONLY "Red"                              exclusivity (single value)
+WHAT.color ONLY ("Blue", "Black")                  exclusivity (exact set — no others)
 NOT WHERE.office = "Seattle"                       negation
 WHO.artist = "Miles Davis" AND WHEN.released = "1959"    AND (intersection)
 WHO.artist = "Miles Davis" OR WHO.artist = "Coltrane"    OR (union)
@@ -235,13 +228,19 @@ WHO|*             all fields in WHO
 WHO|artist|*      all values for WHO.artist
 ```
 
----
+### ONLY — scalar vs set form
+
+`ONLY "Red"` returns entities where the field has exactly one value and it is Red.
+
+`ONLY ("Blue", "Black")` returns entities where the field contains Blue AND Black
+and nothing else. This is the correct way to query for multi-valued exclusivity —
+for example, Magic cards that are exactly blue-black with no other colors.
 
 ## MARC support
 
-snf-peirce ships with the MARC Bibliographic Lens v1.0 — a complete
-field mapping from MARC21 tags to SNF dimensions. Python port of
-`MARCTranslator_v3.js`. No extra dependencies required.
+snf-peirce ships with the MARC Bibliographic Lens v1.0 — a complete field mapping
+from MARC21 tags to SNF dimensions. Python port of MARCTranslator_v3.js. No extra
+dependencies required.
 
 ```python
 from parse_marc import parse_mrc
@@ -257,7 +256,7 @@ for record in records:
 Key field mappings:
 
 | MARC tag | → | Dimension | Semantic key |
-|---|---|---|---|
+|----------|---|-----------|-------------|
 | 100$a | → | WHO | author |
 | 245$a+$b | → | WHAT | title |
 | 260$b / 264$b | → | WHO | publisher |
@@ -268,8 +267,6 @@ Key field mappings:
 | 600$a | → | WHO | subject_person |
 | 655$a | → | WHAT | genre |
 | 020$a | → | WHAT | isbn (nucleus) |
-
----
 
 ## Jupyter workflow
 
@@ -290,37 +287,31 @@ df_result = result.to_dataframe()   # pandas DataFrame — use anything
 df_result.groupby("semantic_key")["value"].value_counts()
 ```
 
----
-
 ## File inventory
 
 | File | Purpose |
-|---|---|
-| `parser.py` | Peirce query parser — conformant with JS reference |
-| `lens.py` | Lens authoring: `suggest()`, `LensDraft`, `load()`, `save()` |
-| `compile.py` | Data compilation: `compile_data()`, `Substrate` |
-| `peirce.py` | Query execution: `query()`, `execute()`, `ResultSet` |
-| `shell.py` | Interactive query shell |
-| `guided_ingest.py` | Guided setup script — no coding required |
-| `base_fetcher.py` | Base class for API fetchers |
-| `fetch_scryfall.py` | Scryfall / Magic: The Gathering fetcher |
-| `fetch_loc.py` | Library of Congress catalog fetcher |
-| `marc_translator.py` | MARC Bibliographic Lens v1.0 |
-| `parse_marc.py` | Pure Python binary MARC / MARCXML parser |
-
----
+|------|---------|
+| parser.py | Peirce query parser — conformant with JS reference |
+| lens.py | Lens authoring: suggest(), LensDraft, load(), save() |
+| compile.py | Data compilation: compile_data(), Substrate |
+| peirce.py | Query execution: query(), execute(), ResultSet |
+| shell.py | Interactive query shell |
+| guided_ingest.py | Guided setup script — no coding required |
+| base_fetcher.py | Base class for API fetchers |
+| fetch_scryfall.py | Scryfall / Magic: The Gathering fetcher |
+| fetch_loc.py | Library of Congress catalog fetcher |
+| marc_translator.py | MARC Bibliographic Lens v1.0 |
+| parse_marc.py | Pure Python binary MARC / MARCXML parser |
 
 ## Running the tests
 
-```bash
+```
 python -m pytest test_parser.py -v    # 59 tests — parser conformance
 python test_lens.py                    # 69 tests — lens authoring
 python test_compile.py                 # 57 tests — compilation and queries
 python test_peirce.py                  # 57 tests — end-to-end query
 python test_conformance.py             # 37 tests — cross-language proof
 ```
-
----
 
 ## Architecture
 
@@ -332,29 +323,22 @@ SNF / Peirce specification   open protocol (MIT)
        Reckoner               visual application for non-technical users
 ```
 
-snf-peirce is Reckoner's data engine. It is also usable standalone
-for data practitioners who want SNF in Python and Jupyter workflows.
-
----
+snf-peirce is Reckoner's data engine. It is also usable standalone for data
+practitioners who want SNF in Python and Jupyter workflows.
 
 ## Note on Portolan
 
-The `\explain` shell command displays a simplified execution plan
-showing constraints ordered by estimated cardinality. This implements
-the same ordering heuristic as Portolan's I1 algorithm for display
-purposes.
+The `\explain` shell command displays a simplified execution plan showing
+constraints ordered by estimated cardinality. This implements the same ordering
+heuristic as Portolan's I1 algorithm for display purposes.
 
-Full Portolan — schema validation, type checking, query rejection,
-composite constraint reasoning — is a separate licensed component
-not included in this package.
-
----
+Full Portolan — schema validation, type checking, query rejection, composite
+constraint reasoning — is a separate licensed component not included in this package.
 
 ## License
 
 MIT. See LICENSE file.
 
-SNF specification, Peirce query language, and MARC Bibliographic
-Lens v1.0 are original works. Attribution required in source code
-and documentation. See project licensing documentation for details
-on Portolan and Reckoner licensing.
+SNF specification, Peirce query language, and MARC Bibliographic Lens v1.0 are
+original works. Attribution required in source code and documentation. See project
+licensing documentation for details on Portolan and Reckoner licensing.

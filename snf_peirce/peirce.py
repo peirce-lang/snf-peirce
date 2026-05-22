@@ -343,15 +343,18 @@ def _expand_only_set(dim, field, allowed_values, substrate):
     Used by both single-value ONLY and grouped multi-value ONLY.
 
     Strategy:
-        1. Fetch candidates — entities matching any of the allowed values (union)
+        1. Fetch candidates — entities matching ALL allowed values (intersection)
+           A card with ONLY (Blue, Black) must have both, not just one.
         2. Fetch all values for this field via discovery
         3. For each disallowed value, subtract entities that have it
     """
-    # Step 1: candidates — entities with at least one allowed value
-    candidates = set()
+    # Step 1: candidates must have ALL allowed values (intersection)
+    # A card with ONLY (Blue, Black) must have both Blue AND Black — not just one.
+    candidates = None
     for value in allowed_values:
         eq_constraint = {"category": dim, "field": field, "op": "eq", "value": value}
-        candidates |= set(substrate.query([eq_constraint]))
+        result = set(substrate.query([eq_constraint]))
+        candidates = result if candidates is None else candidates & result
 
     if not candidates:
         return set()
@@ -463,7 +466,12 @@ def _execute_dnf(conjuncts, substrate):
 
     for (dim, field), values in only_groups.items():
         only_ids = _expand_only_set(dim, field, set(values), substrate)
-        result = result & only_ids
+        # If result is empty because there were no plain constraints,
+        # seed it from the first ONLY expansion rather than intersecting with empty.
+        if not result and not any(c for conjunct in stripped_conjuncts for c in conjunct):
+            result = only_ids
+        else:
+            result = result & only_ids
 
     return sorted(result)
 
