@@ -225,25 +225,42 @@ class Substrate:
         Returns list of entity_id strings satisfying all constraints.
 
         Boolean semantics:
-            AND across dimensions = intersection
-            OR within dimension   = union (same dimension, multiple constraints)
-            between               = range scan on value (lexicographic for strings)
+            AND across (dimension, field) groups = intersection
+            OR within (dimension, field) group   = union (same dim+field, multiple eq values)
+            between                              = range scan
+
+        Same-field AND semantics:
+            WHAT.ingredient = "gin" AND WHAT.ingredient = "Aperol" produces two separate
+            constraint objects. Each gets its own group — they are intersected, not unioned.
+            This is the correct behavior for "find entities that have BOTH values".
         """
         if not constraints:
             return []
 
-        # Group constraints by dimension for union/intersection logic
-        from collections import defaultdict
-        by_dim = defaultdict(list)
-        for c in constraints:
-            dim = (c.get("category") or c.get("dimension") or "").upper()
-            by_dim[dim].append(c)
+        from collections import defaultdict, OrderedDict
 
-        # For each dimension, build the set of entity_ids (union within dim)
-        # Then intersect across dimensions
+        # Group by (dimension, field) with occurrence index so same-field AND
+        # constraints each get their own group and are intersected.
+        occurrence = defaultdict(int)
+        groups = OrderedDict()
+
+        for c in constraints:
+            dim   = (c.get("category") or c.get("dimension") or "").upper()
+            field = (c.get("field") or "").lower()
+            op    = c.get("op", "eq")
+
+            occ = occurrence[(dim, field)]
+            occurrence[(dim, field)] += 1
+            key = (dim, field, occ)
+
+            if key not in groups:
+                groups[key] = []
+            groups[key].append(c)
+
+        # Intersect across all groups
         dim_sets = []
-        for dim, dim_constraints in by_dim.items():
-            ids = self._query_dimension(dim, dim_constraints)
+        for (dim, field, occ), group_constraints in groups.items():
+            ids = self._query_dimension(dim, group_constraints)
             dim_sets.append(set(ids))
 
         if not dim_sets:
